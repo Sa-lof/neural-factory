@@ -1,11 +1,10 @@
 "use client";
 import Slider from "react-slick";
-import { Box, Typography } from "@mui/material";
+import { Box } from "@mui/material";
 
 // Importar estilos de slick-carousel
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { a } from "framer-motion/client";
 
 // Lista de partners (puedes agregar imágenes o nombres de partners)
 const partners = [

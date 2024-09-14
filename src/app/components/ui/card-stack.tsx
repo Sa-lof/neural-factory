@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Typography, Box, Avatar, Button } from "@mui/material";
 
-let interval: any;
+let interval: NodeJS.Timeout;
 
 type Card = {
   id: number;

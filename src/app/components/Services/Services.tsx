@@ -32,6 +32,7 @@ const servicesData = [
 
 export default function Services() {
   const [activeIndex, setActiveIndex] = useState(0);
+  console.log("Active Index:", activeIndex);
 
   // Handle scrolling and reveal each card based on the scroll position.
   const handleScroll = () => {
