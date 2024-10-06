@@ -2,31 +2,43 @@
 import { Box, Typography } from "@mui/material";
 import ServiceCard from "../serviceCard/serviceCard";
 import { useState } from "react";
+import service1 from "../../assets/services/service_1.png";
+import service2 from "../../assets/services/service_2.png";
+import service3 from "../../assets/services/service_3.png";
+import service4 from "../../assets/services/service_4.png";
+import service5 from "../../assets/services/service_5.jpg";
 
 const servicesData = [
   {
-    title: "Service 1",
-    imageUrl: "/path/to/image1.jpg",
+    title: "Análisis de Datos para Soluciones Personalizadas",
+    imageUrl: service1.src,
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla non porta sem, sed porttitor ante.",
+      "Desarrollamos soluciones a medida con una capacidad superior de integración, aprovechando al máximo el potencial de tus datos.",
   },
   {
-    title: "Service 2",
-    imageUrl: "/path/to/image2.jpg",
+    title: "Automatización de Procesos para una Mayor Eficiencia",
+    imageUrl: service2.src,
     description:
-      "Vestibulum aliquet sed urna euismod convallis. Cras sed semper justo.",
+      "Reduce tiempos de procesamiento y costos operativos, optimizando tus procesos con soluciones de automatización a medida.",
   },
   {
-    title: "Service 3",
-    imageUrl: "/path/to/image3.jpg",
+    title:
+      "Ciencia de Datos y Redes Neuronales: Soluciones Avanzadas para la Toma de Decisiones",
+    imageUrl: service3.src,
     description:
-      "Donec placerat nulla id sapien convallis, at ultrices risus vulputate.",
+      "Aprovecha el poder de la inteligencia artificial con nuestras soluciones en visión por computadora, procesamiento del lenguaje natural, series de tiempo, aprendizaje por refuerzo y otras áreas de especialización.",
   },
   {
-    title: "Service 4",
-    imageUrl: "/path/to/image4.jpg",
+    title: "Gestión de Proyectos de IA: Implementa la IA con Éxito",
+    imageUrl: service4.src,
     description:
-      "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.",
+      "Te acompañamos en la gestión de tus proyectos de IA, la integración en la producción, la formación en herramientas como ChatGPT y la automatización del machine learning con AutoML.",
+  },
+  {
+    title: "Pasantías Universitarias",
+    imageUrl: service5.src,
+    description:
+      "Nuestro programa de pasantías ofrece a los estudiantes experiencia práctica en proyectos reales, impulsando la innovación y el desarrollo de soluciones a través de un enfoque por etapas, desde la definición del caso de uso hasta la implementación y optimización.",
   },
 ];
 
@@ -51,11 +63,9 @@ export default function Services() {
         alignItems: "center", // Center vertically
         height: "100vh", // Full height of the viewport
         fontFamily: "Exo, sans-serif",
-
         marginRight: 12,
         marginLeft: 12,
         width: "90%",
-
         margin: "0 auto", // Center container on the page
       }}
       onScroll={handleScroll}
@@ -89,8 +99,11 @@ export default function Services() {
             fontWeight: 300,
           }}
         >
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla non
-          porta sem, sed porttitor ante.
+          En Neural Factory, nuestro enfoque es entregar soluciones innovadoras
+          y personalizadas que optimizan tus procesos y maximizan el rendimiento
+          empresarial. Desde análisis de datos hasta automatización avanzada,
+          nuestra misión es ayudar a tu negocio a tomar decisiones más
+          inteligentes y eficientes.
         </Typography>
       </Box>
 
@@ -110,7 +123,7 @@ export default function Services() {
             key={index}
             title={service.title}
             description={service.description}
-            imageUrl=""
+            imageUrl={service.imageUrl}
           />
         ))}
       </Box>

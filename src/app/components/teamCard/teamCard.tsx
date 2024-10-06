@@ -6,21 +6,21 @@ import { Box, Typography } from "@mui/material";
 const CARDS = [
   {
     id: 0,
-    name: "Daniel",
+    name: "Daniel Núñez (Científico de Datos)",
     avatar: "/path/to/avatar1.jpg",
     socialLink: "https://twitter.com/daniel", // Editable social media link
     content: (
       <>
-        Maecenas vitae velit sit amet velit facilisis lacinia. Suspendisse ac
-        dapibus risus, id aliquam purus. Nulla rhoncus nisl quam, id mollis dui
-        ornare at. Morbi aliquam varius rutrum. Sed ac orci ac enim placerat
-        scelerisque.
+        Daniel es científico de datos con experiencia en IA, big data y
+        ciberseguridad. Ha desarrollado sistemas IoT seguros y modelos
+        predictivos. Se actualiza con certificaciones y metodologías ágiles para
+        resolver desafíos empresariales con soluciones basadas en datos.
       </>
     ),
   },
   {
     id: 1,
-    name: "Maria",
+    name: "Ricardo López",
     avatar: "/path/to/avatar2.jpg",
     socialLink: "https://linkedin.com/in/maria", // Editable social media link
     content: (
@@ -32,7 +32,7 @@ const CARDS = [
   },
   {
     id: 2,
-    name: "Carlos",
+    name: "Efraín",
     avatar: "/path/to/avatar3.jpg",
     socialLink: "https://facebook.com/carlos", // Editable social media link
     content: (

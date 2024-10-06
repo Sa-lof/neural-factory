@@ -9,46 +9,51 @@ import Services from "./components/Services/Services";
 import Industries from "./components/Industries/Industries";
 import Contact from "./components/Contact/Contact";
 import Footer from "./components/Footer/Footer";
+import about1 from "./assets/about/about_1.jpg";
+import about2 from "./assets/about/about_2.jpg";
+import about3 from "./assets/about/about_3.jpg";
+import about4 from "./assets/about/about_4.jpg";
+import about5 from "./assets/about/about_5.jpg";
 
 const cards = [
   {
-    image: "/path/to/image1.jpg",
+    image: about1.src,
     number: "01",
     title: "¿Quiénes somos?",
     description:
-      "Maecenas ipsum augue, posuere eu risus quis, vulputate rutrum tortor. Vestibulum aliquet sed urna euismod convallis.",
+      "Transformamos los procesos empresariales a través de soluciones avanzadas de Inteligencia Artificial (IA) y Machine Learning (ML). Nos enfocamos en ofrecer tecnología de vanguardia que maximiza la eficiencia y la productividad, sin comprometer el presupuesto.",
     size: { xs: 12, sm: 6, md: 4 }, // Tarjetas superiores más pequeñas
   },
   {
-    image: "/path/to/image2.jpg",
+    image: about2.src,
     number: "02",
     title: "Historia",
     description:
-      "Maecenas ipsum augue, posuere eu risus quis, vulputate rutrum tortor. Vestibulum aliquet sed urna euismod convallis.",
+      "Neural Factory se fundó sobre el principio de hacer que la IA sea accesible para todas las empresas. Estamos en continua evolución para mantenernos a la vanguardia de la innovación en IA.",
     size: { xs: 12, sm: 6, md: 4 }, // Tarjetas superiores más pequeñas
   },
   {
-    image: "/path/to/image3.jpg",
+    image: about3.src,
     number: "03",
     title: "Misión",
     description:
-      "Maecenas ipsum augue, posuere eu risus quis, vulputate rutrum tortor. Vestibulum aliquet sed urna euismod convallis.",
+      "Acelerar la transformación digital de las empresas mediante soluciones accesibles de IA y ML, optimizando recursos y garantizando un alto retorno de la inversión.",
     size: { xs: 12, sm: 6, md: 4 }, // Tarjetas superiores más pequeñas
   },
   {
-    image: "/path/to/image4.jpg",
+    image: about4.src,
     number: "04",
     title: "Visión",
     description:
-      "Maecenas ipsum augue, posuere eu risus quis, vulputate rutrum tortor. Vestibulum aliquet sed urna euismod convallis.",
+      "Convertirnos en líderes del desarrollo de IA/ML, ofreciendo herramientas tecnológicas efectivas que permitan a las empresas evolucionar sin incurrir en costos significativos.",
     size: { xs: 12, sm: 12, md: 6 }, // Tarjetas inferiores más grandes
   },
   {
-    image: "/path/to/image5.jpg",
+    image: about5.src,
     number: "05",
     title: "Valores",
     description:
-      "Maecenas ipsum augue, posuere eu risus quis, vulputate rutrum tortor. Vestibulum aliquet sed urna euismod convallis.",
+      "Eficiencia, Asequibilidad, Innovación, Colaboración",
     size: { xs: 12, sm: 12, md: 6 }, // Tarjetas inferiores más grandes
   },
 ];

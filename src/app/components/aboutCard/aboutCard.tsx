@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Typography } from "@mui/material";
+import { Card, CardContent, CardMedia, Typography } from "@mui/material";
 
 interface AboutCardProps {
   image: string; // Ruta de la imagen
@@ -15,7 +15,7 @@ const AboutCard: React.FC<AboutCardProps> = ({
   description,
 }) => {
   return (
-    <Box
+    <Card
       sx={{
         border: "1px solid #f5f5f5", // Borde blanco
         padding: "1.5rem",
@@ -23,26 +23,27 @@ const AboutCard: React.FC<AboutCardProps> = ({
         textAlign: "left",
         color: "#f5f5f5",
         transition: "transform 0.3s ease-in-out",
+        height: "100%",
         "&:hover": {
           transform: "scale(1.05)", // Efecto hover para escalar la tarjeta
         },
+        backgroundColor: "transparent", // Fondo transparente si es necesario
       }}
     >
       {/* Imagen */}
-      <Box
+      <CardMedia
         component="img"
         src={image}
         alt={title}
         sx={{
-          width: "100%",
           height: "150px",
-          objectFit: "contain",
+          objectFit: "cover", // Hace que la imagen cubra completamente el espacio
           marginBottom: "1rem",
         }}
       />
 
       {/* Número y título */}
-      <Box sx={{ display: "flex", alignItems: "center" }}>
+      <CardContent sx={{ padding: "0" }}>
         <Typography
           variant="h5"
           sx={{
@@ -60,7 +61,7 @@ const AboutCard: React.FC<AboutCardProps> = ({
           variant="h5"
           sx={{
             fontWeight: 500,
-            color: "#f5f5f5", // Color amarillo
+            color: "#f5f5f5", // Color del texto
             marginBottom: "0.5rem",
             fontFamily: "Exo, sans-serif",
             fontSize: "24px",
@@ -68,21 +69,20 @@ const AboutCard: React.FC<AboutCardProps> = ({
         >
           {title}
         </Typography>
-      </Box>
 
-      {/* Descripción */}
-      <Typography
-        variant="body2"
-        sx={{
-          color: "#f5f5f5",
-          fontFamily: "Exo, sans-serif",
-          fontWeight: 300,
-          fontSize: "16px",
-        }}
-      >
-        {description}
-      </Typography>
-    </Box>
+        <Typography
+          variant="body2"
+          sx={{
+            color: "#f5f5f5",
+            fontFamily: "Exo, sans-serif",
+            fontWeight: 300,
+            fontSize: "16px",
+          }}
+        >
+          {description}
+        </Typography>
+      </CardContent>
+    </Card>
   );
 };
 

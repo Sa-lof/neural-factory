@@ -1,7 +1,6 @@
 "use client";
 import React from "react";
 import { Box, Typography } from "@mui/material";
-import CustomButton from "../customButton/customButton";
 import net from "../../assets/net.png";
 import { ArrowDownward } from "@mui/icons-material";
 
@@ -12,7 +11,7 @@ const Header: React.FC = () => {
       sx={{
         position: "relative",
         width: "100%",
-        height: "calc(100vh - 64px)", // Ajustar la altura restando la altura de la barra de navegación
+        height: "calc(100vh - 64px)",
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
@@ -64,8 +63,8 @@ const Header: React.FC = () => {
           variant="body1"
           component="p"
           sx={{
-            fontSize: { xs: "1rem", md: "24px" }, // Tamaño de fuente responsivo
-            maxWidth: "800px", // Ancho máximo aumentado para que el texto esté más expandido
+            fontSize: { xs: "1rem", md: "40px" }, // Tamaño de fuente responsivo
+            maxWidth: "1100px", // Ancho máximo aumentado para que el texto esté más expandido
             lineHeight: { xs: "1.6", md: "1.8" }, // Ajusta la altura de línea para mejorar la legibilidad
             letterSpacing: { xs: "0.5px", md: "0.8px" }, // Aumenta ligeramente el espaciado de letras
             margin: "0 auto",
@@ -75,23 +74,29 @@ const Header: React.FC = () => {
             fontFamily: "Exo, sans-serif",
           }}
         >
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla non
-          porta sem, sed porttitor ante. Nunc vulputate enim sapien, eget
-          feugiat risus finibus quis.
+          Desbloqueando el Potencial de la IA para su Negocio.
+          <br />
+          <Typography
+            variant="body1"
+            component="span"
+            sx={{
+              fontSize: { xs: "1rem", md: "24px" }, // Tamaño de fuente responsivo
+              maxWidth: "900px", // Ancho máximo aumentado para que el texto esté más expandido
+              lineHeight: { xs: "1.6", md: "1.8" }, // Ajusta la altura de línea para mejorar la legibilidad
+              letterSpacing: { xs: "0.5px", md: "0.8px" }, // Aumenta ligeramente el espaciado de letras
+              margin: "0 auto",
+              color: "white",
+              paddingBottom: 8,
+              fontWeight: 300,
+              fontFamily: "Exo, sans-serif",
+            }}
+          >
+            Contáctenos hoy mismo para explorar cómo nuestras soluciones de IA
+            pueden transformar sus operaciones e impulsar el crecimiento.
+          </Typography>
         </Typography>
-
-        <CustomButton
-          href="/contact"
-          borderColor="#FFC300"
-          textColor="#FFC300"
-          hoverBackgroundColor="#FFC300"
-          hoverTextColor="#F5F5F5"
-        >
-          Contacta a NF
-        </CustomButton>
       </Box>
 
-      {/* Indicador de desplazamiento hacia abajo */}
       <Box
         sx={{
           position: "absolute",
@@ -108,7 +113,7 @@ const Header: React.FC = () => {
             fontSize: "32px",
           }}
         >
-          <ArrowDownward fontSize="large" /> 
+          <ArrowDownward fontSize="large" />
         </Typography>
       </Box>
 

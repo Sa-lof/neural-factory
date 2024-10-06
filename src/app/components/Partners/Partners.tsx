@@ -1,19 +1,20 @@
 "use client";
 import Slider from "react-slick";
 import { Box } from "@mui/material";
+import Image from "next/image";
+import partner1 from "../../assets/partners/partner_1.png";
 
 // Importar estilos de slick-carousel
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-// Lista de partners (puedes agregar imágenes o nombres de partners)
+// Lista de partners (reemplazar con las URLs de las imágenes de los partners)
 const partners = [
-  "partner 1",
-  "partner 2",
-  "partner 3",
-  "partner 4",
-  "partner 5",
-  "partner 6",
+  partner1,
+  partner1,
+  partner1,
+  partner1,
+
 ];
 
 export default function Partners() {
@@ -53,9 +54,6 @@ export default function Partners() {
     ],
   };
 
-  // Verificar que los items de partners se están renderizando
-  console.log("Partners:", partners);
-
   return (
     <Box
       sx={{
@@ -68,8 +66,6 @@ export default function Partners() {
       }}
     >
       <Box sx={{ width: "95%" }}>
-        {" "}
-        {/* Asegurar que el slider tenga un ancho definido */}
         <Slider {...settings}>
           {partners.map((partner, index) => (
             <Box
@@ -77,14 +73,15 @@ export default function Partners() {
               sx={{
                 textAlign: "center",
                 padding: "10px",
-                color: "#fff",
-                fontFamily: "Exo, sans-serif",
-                fontSize: "36px",
-                fontWeight: 700,
-                textTransform: "none",
               }}
             >
-              {partner}
+              <Image
+                src={partner}
+                alt={`Partner ${index + 1}`}
+                width={150} // Especificar el ancho de la imagen
+                height={150} // Especificar la altura de la imagen
+                style={{ margin: "0 auto", objectFit: "contain" }}
+              />
             </Box>
           ))}
         </Slider>

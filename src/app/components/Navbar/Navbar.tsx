@@ -19,6 +19,7 @@ const Navbar = () => {
             alt="Logo"
             width={50} // Adjust the size as needed
             height={50}
+            style={{height: "auto", width: "auto"}}
           />
         </Box>
 

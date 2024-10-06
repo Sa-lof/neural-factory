@@ -1,24 +1,39 @@
 "use client";
-import { Box, Typography, Grid } from "@mui/material";
+import { Box, Typography, Grid, Link } from "@mui/material";
 import { HoverText } from "../hoverText/hoverText";
 
 export default function Footer() {
+  const emails = [
+    { label: "Recursos Humanos", email: "rh@neural-factory.com" },
+    { label: "Finanzas y Contabilidad", email: "finanzas@neural-factory.com" },
+    { label: "Desarrollo de Negocios", email: "negocios@neural-factory.com" },
+    { label: "Marketing", email: "marketing@neural-factory.com" },
+    { label: "Ventas", email: "ventas@neural-factory.com" },
+    { label: "Investigación y Desarrollo (I+D)", email: "investigacion@neural-factory.com" },
+    { label: "Tecnología e Innovación", email: "tecnologia@neural-factory.com" },
+    { label: "Atención al Cliente", email: "atencion.cliente@neural-factory.com" },
+    { label: "Desarrollo de Proyectos IA/ML", email: "proyectos@neural-factory.com" },
+    { label: "Ricardo López", email: "ricardo.lopez@neural-factory.com" },
+    { label: "Daniel Núñez", email: "daniel.nunez@neural-factory.com" },
+    { label: "Efraín Pantoja", email: "efrain.pantoja@neural-factory.com" },
+  ];
+
   return (
     <Box
       sx={{
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
-        justifyContent: "space-between", // Distribuye el espacio de manera uniforme
+        justifyContent: "space-between",
         color: "#f5f5f5",
         fontFamily: "Exo, sans-serif",
         gap: "40px",
         width: "100%",
         paddingRight: "40px",
         paddingLeft: "40px",
-        height: "100vh", // Full height
-        boxSizing: "border-box", // Para asegurar que padding no afecte el tamaño
-        paddingTop: 16,
+        height: "100vh",
+        boxSizing: "border-box",
+        paddingTop: 4,
       }}
     >
       {/* Email Section */}
@@ -29,7 +44,7 @@ export default function Footer() {
           alignItems: "center",
           width: "100%",
           textAlign: "center",
-          flexGrow: 1, // Deja que esta sección crezca si es necesario
+          flexGrow: 1,
         }}
       >
         <Typography
@@ -37,18 +52,18 @@ export default function Footer() {
           sx={{
             fontFamily: "Exo, sans-serif",
             fontWeight: 700,
-            fontSize: { xs: "48px", md: "116px" },
+            fontSize: { xs: "48px", md: "92px" },
             color: "#f5f5f5",
             whiteSpace: "nowrap",
           }}
         >
-          contacto
+          direccion.general
         </Typography>
         <Typography
           component="span"
           sx={{
             color: "#FFC300",
-            fontSize: { xs: "48px", md: "116px" },
+            fontSize: { xs: "48px", md: "92px" },
             fontWeight: 700,
             marginLeft: "8px",
           }}
@@ -60,7 +75,7 @@ export default function Footer() {
           sx={{
             fontFamily: "Exo, sans-serif",
             fontWeight: 700,
-            fontSize: { xs: "48px", md: "116px" },
+            fontSize: { xs: "48px", md: "92px" },
             color: "#f5f5f5",
             whiteSpace: "nowrap",
           }}
@@ -69,7 +84,7 @@ export default function Footer() {
         </Typography>
       </Box>
 
-      {/* Phone and additional text section using Grid */}
+      {/* Email Grid Section in 3 Columns */}
       <Grid
         container
         spacing={3}
@@ -78,41 +93,43 @@ export default function Footer() {
           maxWidth: "100%",
           paddingBottom: 0,
           marginBottom: 0,
-          justifyContent: "space-between",
-          flexGrow: 1, // Deja que esta sección crezca si es necesario
+          justifyContent: "center",
+          flexGrow: 1,
         }}
       >
-        {/* Phone Number */}
-        <Grid item xs={12} md={6}>
-          <Typography
-            variant="h5"
-            sx={{
-              fontFamily: "Exo, sans-serif",
-              fontWeight: 700,
-              fontSize: { xs: "48px", md: "64px" },
-              color: "#FFC300",
-              textAlign: "left",
-            }}
-          >
-            55 5567 7890
-          </Typography>
-        </Grid>
-
-        {/* Placeholder Text */}
-        <Grid item xs={12} md={6}>
-          <Typography
-            variant="body1"
-            sx={{
-              fontFamily: "Exo, sans-serif",
-              fontWeight: 700,
-              fontSize: { xs: "24px", md: "64px" },
-              color: "#FFC300",
-              textAlign: "right",
-            }}
-          >
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          </Typography>
-        </Grid>
+        {emails.map((item, index) => (
+          <Grid item xs={12} sm={6} md={4} key={index} sx={{textAlign: "center", mb: 4}}>
+            <Typography
+              variant="h6"
+              sx={{
+                fontFamily: "Exo, sans-serif",
+                fontWeight: 700,
+                fontSize: { xs: "16px", md: "20px" },
+                color: "#f5f5f5",
+                textAlign: "center",
+              }}
+            >
+              {item.label}
+            </Typography>
+            <Link
+              href={`mailto:${item.email}`}
+              target="_blank"
+              sx={{
+                fontFamily: "Exo, sans-serif",
+                fontWeight: 700,
+                fontSize: { xs: "16px", md: "18px" },
+                color: "#FFC300",
+                textDecoration: "none",
+                textAlign: "center",
+                "&:hover": {
+                  textDecoration: "underline",
+                },
+              }}
+            >
+              {item.email}
+            </Link>
+          </Grid>
+        ))}
       </Grid>
 
       {/* Large Title Neural Factory */}

@@ -1,58 +1,123 @@
 "use client";
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, Grid } from "@mui/material";
+import banca from "../../assets/industries/banca.jpg";
+import educacion from "../../assets/industries/education.jpg";
+import energias from "../../assets/industries/energias.jpg";
+import gobierno from "../../assets/industries/gobierno.png";
+import logistics from "../../assets/industries/logistics.jpg";
+import manufactura from "../../assets/industries/manufactura.jpg";
+import retail from "../../assets/industries/retail.jpg";
+import salud from "../../assets/industries/salud.png";
+import seguros from "../../assets/industries/seguros.jpg";
+import telecom from "../../assets/industries/telecom.jpg";
 
 interface IndustryCardProps {
   title: string;
   imageUrl: string;
 }
 
-const IndustryCard = ({ imageUrl }: IndustryCardProps) => {
+const IndustryCard = ({ title, imageUrl }: IndustryCardProps) => {
   return (
     <Box
       sx={{
+        position: "relative",
         backgroundImage: `url(${imageUrl})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
         borderRadius: "16px",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        color: "#0D0D0D",
-        fontFamily: "Exo, sans-serif",
-        fontWeight: 700,
-        fontSize: "24px",
-        height: "100%", // Ensures the card takes up the full grid space
+        height: "200px", // Altura fija para que todas las tarjetas sean visibles
         width: "100%",
+        overflow: "hidden", // Asegura que los bordes no se salgan
+        transition: "transform 0.3s ease-in-out",
+        "&:hover": {
+          transform: "scale(1.05)", // Efecto de zoom al hacer hover
+        },
       }}
-    ></Box>
+    >
+      {/* Overlay con el título que aparece en hover */}
+      <Box
+        sx={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          width: "100%",
+          height: "100%",
+          backgroundColor: "rgba(0, 0, 0, 0.6)", // Fondo negro semitransparente
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          opacity: 0, // Oculto por defecto
+          transition: "opacity 0.3s ease-in-out", // Transición suave
+          "&:hover": {
+            opacity: 1, // Aparece en hover
+          },
+        }}
+      >
+        <Typography
+          sx={{
+            color: "#FFC300", // Color amarillo para el título
+            fontFamily: "Exo, sans-serif",
+            fontWeight: "bold",
+            fontSize: "24px",
+            textAlign: "center",
+          }}
+        >
+          {title}
+        </Typography>
+      </Box>
+    </Box>
   );
 };
 
 export default function Industries() {
   const industryCards = [
     {
-      title: "IMAGEN",
-      imageUrl: "https://via.placeholder.com/600x400",
+      title: "Banca",
+      imageUrl: banca.src,
     },
     {
-      title: "IMAGEN",
-      imageUrl: "https://via.placeholder.com/600x400",
+      title: "Educación",
+      imageUrl: educacion.src,
     },
     {
-      title: "IMAGEN",
-      imageUrl: "https://via.placeholder.com/600x400",
+      title: "Energías",
+      imageUrl: energias.src,
     },
     {
-      title: "IMAGEN",
-      imageUrl: "https://via.placeholder.com/600x400",
+      title: "Gobierno",
+      imageUrl: gobierno.src,
     },
     {
-      title: "IMAGEN",
-      imageUrl: "https://via.placeholder.com/600x400",
+      title: "Logística",
+      imageUrl: logistics.src,
     },
     {
-      title: "IMAGEN",
-      imageUrl: "https://via.placeholder.com/600x400",
+      title: "Manufactura",
+      imageUrl: manufactura.src,
+    },
+    {
+      title: "Retail",
+      imageUrl: retail.src,
+    },
+    {
+      title: "Salud",
+      imageUrl: salud.src,
+    },
+    {
+      title: "Seguros",
+      imageUrl: seguros.src,
+    },
+    {
+      title: "",
+      imageUrl: "",
+    },
+    {
+      title: "Telecomunicaciones",
+      imageUrl: telecom.src,
+    },
+    {
+      title: "",
+      imageUrl: "",
     },
   ];
 
@@ -63,11 +128,12 @@ export default function Industries() {
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
-        height: "100vh", // Full viewport height
         paddingTop: 4,
+        height: "100vh",
+        mt: 20,
       }}
     >
-      {/* Title */}
+      {/* Título de la sección */}
       <Typography
         variant="h5"
         sx={{
@@ -76,32 +142,21 @@ export default function Industries() {
           fontWeight: 500,
           fontSize: "52px",
           textAlign: "center",
-          marginBottom: "32px",
+          marginBottom: 12,
         }}
       >
         Hemos trabajado con clientes de diversas industrias, ayudando a
         optimizar su logística, marketing y operaciones.
       </Typography>
 
-      {/* Grid layout */}
-      <Box
-        sx={{
-          display: "grid",
-          gridTemplateColumns: "repeat(3, 1fr)", // 3 columns
-          gridTemplateRows: "repeat(2, 300px)", // 2 rows, each with a fixed height of 300px
-          gap: "16px",
-          maxWidth: "1200px",
-          width: "100%",
-        }}
-      >
+      {/* Grid layout simple */}
+      <Grid container spacing={2} sx={{ maxWidth: "1200px", width: "100%" }}>
         {industryCards.map((card, index) => (
-          <IndustryCard
-            key={index}
-            title={card.title}
-            imageUrl={card.imageUrl}
-          />
+          <Grid item xs={12} sm={6} md={4} key={index}>
+            <IndustryCard title={card.title} imageUrl={card.imageUrl} />
+          </Grid>
         ))}
-      </Box>
+      </Grid>
     </Box>
   );
 }
