@@ -11,7 +11,7 @@ const Header: React.FC = () => {
       sx={{
         position: "relative",
         width: "100%",
-        height: "calc(100vh - 64px)",
+        minHeight: "100vh",
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
@@ -43,16 +43,18 @@ const Header: React.FC = () => {
           zIndex: 1,
           textAlign: "center",
           color: "#FFF",
+          paddingBottom:{ xs:0, sm:0, md:0, lg:4},
         }}
       >
         <Typography
           variant="h1"
           component="h1"
           sx={{
-            fontSize: { xs: "3rem", md: "152px" }, // Tamaño de fuente responsivo
+            fontSize: { xs: "3rem", sm:"5rem", md: "7rem", lg:"9rem"},
             fontWeight: 900,
             color: "#FFC300",
-            paddingBottom: 8,
+            paddingBottom: 4,
+            paddingTop: 10,
             fontFamily: "Exo, sans-serif",
           }}
         >
@@ -63,7 +65,7 @@ const Header: React.FC = () => {
           variant="body1"
           component="p"
           sx={{
-            fontSize: { xs: "1rem", md: "40px" }, // Tamaño de fuente responsivo
+            fontSize: { xs: "1rem", sm:"1.4rem", md: "1.8rem", lg:"2.1rem"},
             maxWidth: "1100px", // Ancho máximo aumentado para que el texto esté más expandido
             lineHeight: { xs: "1.6", md: "1.8" }, // Ajusta la altura de línea para mejorar la legibilidad
             letterSpacing: { xs: "0.5px", md: "0.8px" }, // Aumenta ligeramente el espaciado de letras
@@ -80,7 +82,7 @@ const Header: React.FC = () => {
             variant="body1"
             component="span"
             sx={{
-              fontSize: { xs: "1rem", md: "24px" }, // Tamaño de fuente responsivo
+              fontSize: { xs: "0.8rem", sm:"1rem", md: "1.3rem", lg:"1.5rem"},
               maxWidth: "900px", // Ancho máximo aumentado para que el texto esté más expandido
               lineHeight: { xs: "1.6", md: "1.8" }, // Ajusta la altura de línea para mejorar la legibilidad
               letterSpacing: { xs: "0.5px", md: "0.8px" }, // Aumenta ligeramente el espaciado de letras

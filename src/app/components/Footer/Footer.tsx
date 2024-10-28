@@ -52,7 +52,7 @@ export default function Footer() {
           sx={{
             fontFamily: "Exo, sans-serif",
             fontWeight: 700,
-            fontSize: { xs: "48px", md: "92px" },
+            fontSize: { xs: "20px", sm:"40px", md: "60px", lg:"80px"},
             color: "#f5f5f5",
             whiteSpace: "nowrap",
           }}
@@ -75,7 +75,7 @@ export default function Footer() {
           sx={{
             fontFamily: "Exo, sans-serif",
             fontWeight: 700,
-            fontSize: { xs: "48px", md: "92px" },
+            fontSize: { xs: "20px", sm:"40px", md: "60px", lg:"80px"},
             color: "#f5f5f5",
             whiteSpace: "nowrap",
           }}

@@ -65,7 +65,7 @@ export function CardStackDemo() {
           fontFamily: "Exo, sans-serif",
           color: "#f5f5f5",
           fontWeight: 700,
-          fontSize: "52px",
+          fontSize: { xs: "28px", sm:"36px", md: "44px", lg:"52px"},
           marginBottom: 8,
         }}
       >

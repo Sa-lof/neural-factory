@@ -129,8 +129,8 @@ export default function Industries() {
         alignItems: "center",
         justifyContent: "center",
         paddingTop: 4,
-        height: "100vh",
-        mt: 20,
+        minHeight: { xs: '100vh', md: 'auto' }, // Altura mínima en pantallas pequeñas
+        mt: { xs: 0, md: 20 }, // Ajuste de margen para pantallas pequeñas
       }}
     >
       {/* Título de la sección */}
@@ -140,13 +140,12 @@ export default function Industries() {
           fontFamily: "Exo, sans-serif",
           color: "#f5f5f5",
           fontWeight: 500,
-          fontSize: "52px",
+          fontSize: { xs: "28px", sm:"36px", md: "44px", lg:"52px"},
           textAlign: "center",
           marginBottom: 12,
         }}
       >
-        Hemos trabajado con clientes de diversas industrias, ayudando a
-        optimizar su logística, marketing y operaciones.
+        Hemos trabajado con clientes de diversas industrias, ayudando a optimizar su logística, marketing y operaciones.
       </Typography>
 
       {/* Grid layout simple */}

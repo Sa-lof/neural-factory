@@ -18,9 +18,10 @@ const AboutGrid: React.FC<AboutGridProps> = ({ cards }) => {
       sx={{
         marginRight: 12,
         marginLeft: 12,
-        height: "100vh",
+        height: "auto", // Cambiado de "100vh" a "auto"
         alignItems: "center",
         alignContent: "center",
+        paddingBottom: 2,
       }}
     >
       <Grid container spacing={3}>
@@ -42,6 +43,7 @@ const AboutGrid: React.FC<AboutGridProps> = ({ cards }) => {
         ))}
       </Grid>
     </Box>
+
   );
 };
 

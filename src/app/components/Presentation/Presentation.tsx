@@ -21,7 +21,7 @@ const Presentation: React.FC = () => {
           color: "#FFF",
           marginBottom: "2rem", // Espaciado inferior
           fontFamily: "Exo, sans-serif",
-          fontSize: "100px",
+          fontSize: { xs: "40px", sm:"60px", md: "80px", lg:"100px"},
         }}
       >
         ¿Que es <span style={{ color: "#FFC300" }}>Neural Factory</span>?{" "}
@@ -30,7 +30,7 @@ const Presentation: React.FC = () => {
       <Typography
         variant="body1"
         sx={{
-          fontSize: "32px", // Tamaño de fuente un poco más grande
+          fontSize: { xs: "0.8rem", sm:"1rem", md: "1.3rem", lg:"1.5rem"},
           lineHeight: "1.75", // Altura de línea para mayor legibilidad
           maxWidth: "1600px", // Ancho máximo para que el texto no ocupe todo el ancho
           margin: "0 auto", // Centrar el texto
