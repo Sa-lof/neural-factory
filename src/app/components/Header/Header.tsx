@@ -82,7 +82,7 @@ const Header: React.FC = () => {
             variant="body1"
             component="span"
             sx={{
-              fontSize: { xs: "0.8rem", sm:"1rem", md: "1.3rem", lg:"1.5rem"},
+              fontSize: { xs: "0.8rem", sm:"1rem", md: "1.2rem", lg:"1.3rem"},
               maxWidth: "900px", // Ancho máximo aumentado para que el texto esté más expandido
               lineHeight: { xs: "1.6", md: "1.8" }, // Ajusta la altura de línea para mejorar la legibilidad
               letterSpacing: { xs: "0.5px", md: "0.8px" }, // Aumenta ligeramente el espaciado de letras

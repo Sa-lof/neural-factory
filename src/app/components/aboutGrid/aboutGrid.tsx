@@ -16,9 +16,9 @@ const AboutGrid: React.FC<AboutGridProps> = ({ cards }) => {
   return (
     <Box
       sx={{
-        marginRight: 12,
-        marginLeft: 12,
-        height: "auto", // Cambiado de "100vh" a "auto"
+        marginRight: { xs:6, sm:8, md:10, lg:12},
+        marginLeft: { xs:6, sm:8, md:10, lg:12},
+        height: "auto",
         alignItems: "center",
         alignContent: "center",
         paddingBottom: 2,

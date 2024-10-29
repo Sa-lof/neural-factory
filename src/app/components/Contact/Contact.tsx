@@ -21,7 +21,7 @@ export default function Contact() {
         sx={{
           color: "#f5f5f5",
           fontWeight: 500,
-          fontSize: "52px",
+          fontSize: { xs: "28px", sm:"36px", md: "44px", lg:"52px"},
           textAlign: "center",
           marginBottom: "16px",
           fontFamily: "Exo, sans-serif",
@@ -33,7 +33,7 @@ export default function Contact() {
           sx={{
             color: "#FFC300",
             fontWeight: 500,
-            fontSize: "52px",
+            fontSize: { xs: "28px", sm:"36px", md: "44px", lg:"52px"},
             fontFamily: "Exo, sans-serif",
           }}
         >

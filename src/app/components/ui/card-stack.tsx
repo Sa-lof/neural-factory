@@ -49,7 +49,7 @@ export const CardStack = ({
       {cards.map((card, index) => (
         <motion.div
           key={card.id}
-          className="absolute bg-[#FFC300] h-96 w-full max-w-5xl rounded-xl p-3 shadow-lg flex flex-row items-center space-x-8"
+          className="absolute bg-[#FFC300] h-96 w-full max-w-5xl rounded-xl p-2 shadow-lg flex flex-row items-center space-x-3"
           style={{
             transformOrigin: "top center",
             borderRadius: "16px",
@@ -68,7 +68,7 @@ export const CardStack = ({
               height:{ xs:90, sm:160, md:180, lg:200},
               backgroundColor: "#0D0D0D",
               marginRight: 0,
-              marginLeft:{ xs:2, sm:4, md:6, lg:8},
+              marginLeft:{ xs:1, sm:4, md:6, lg:8},
             }}
           />
           <Box sx={{ textAlign: "left", color: "#0D0D0D", maxWidth: "80%" }}>
@@ -86,7 +86,7 @@ export const CardStack = ({
             <Typography
               variant="body1"
               sx={{
-                fontSize: { xs: "0.8rem", sm:"0.9rem", md: "1.2rem", lg:"1.3rem"},
+                fontSize: { xs: "0.82rem", sm:"1.1rem", md: "1.2rem", lg:"1.3rem"},
                 mb: 4,
                 fontFamily: "Exo, sans-serif",
                 color: "#0D0D0D",

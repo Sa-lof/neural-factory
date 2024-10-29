@@ -50,6 +50,8 @@ export function CardStackDemo() {
       sx={{
         marginTop: 24,
         marginBottom: 72,
+        marginLeft:3,
+        marginRight:3,
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
