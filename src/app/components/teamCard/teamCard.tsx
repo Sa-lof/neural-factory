@@ -48,8 +48,8 @@ export function CardStackDemo() {
   return (
     <Box
       sx={{
-        marginTop: 24,
-        marginBottom: 72,
+        marginTop: { xs:12 , sm: 16, md: 20, lg:24},
+        marginBottom:{ xs:60 , sm: 60, md: 70, lg:70},
         marginLeft:3,
         marginRight:3,
         display: "flex",

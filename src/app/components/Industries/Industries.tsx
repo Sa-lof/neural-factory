@@ -122,7 +122,7 @@ export default function Industries() {
         justifyContent: "center",
         paddingTop: 4,
         minHeight: { xs: '100vh', md: 'auto' }, // Altura mínima en pantallas pequeñas
-        mt: { xs: 0, md: 20 }, // Ajuste de margen para pantallas pequeñas
+        mt: { xs: 0, md: 8 }, // Ajuste de margen para pantallas pequeñas
       }}
     >
       {/* Título de la sección */}

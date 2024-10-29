@@ -35,7 +35,8 @@ const CustomButton: React.FC<CustomButtonProps> = ({
           textTransform: "none",
           borderRadius: borderRadius,
           fontWeight: 700,
-          padding: "8px 24px",
+          fontSize: { xs: "0.8rem", md: "1rem" }, // Smaller font size on mobile
+          padding: { xs: "5px 10px", md: "10px 20px" }, // Adjust padding for mobile and desktop
           "&:hover": {
             backgroundColor: hoverBackgroundColor,
             color: hoverTextColor,

@@ -4,14 +4,15 @@ import { Box, Typography } from "@mui/material";
 const Presentation: React.FC = () => {
   return (
     <Box
-      sx={{
-        textAlign: "center",
-        padding: "4rem 2rem", // Espaciado adecuado para darle margen al contenido
-        color: "#f5f5f5", // Color de texto claro
-        alignItems: "center",
-        alignContent: "center",
-        height: "100vh", // Ajustar la altura al 100% del viewport
-      }}
+    sx={{
+      textAlign: "center",
+      padding: "4rem 2rem",
+      color: "#f5f5f5",
+      alignItems: "center",
+      alignContent: "center",
+      height: "100vh",
+      paddingTop: { xs: "0.6rem", sm: "0.8rem", md: "1rem", lg: "1rem" }, // Reducir margen superior aquí
+    }}
     >
       {/* Título principal */}
       <Typography
