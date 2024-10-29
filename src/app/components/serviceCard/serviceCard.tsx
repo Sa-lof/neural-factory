@@ -47,7 +47,7 @@ export default function ServiceCard({
           fontWeight: 700,
           color: "#FFC300",
           marginBottom: "8px",
-          fontSize: "24px",
+          fontSize: { xs: "1.2rem", sm:"1.3rem", md: "1.4rem", lg:"1.5rem"},
         }}
       >
         {title}
@@ -58,7 +58,7 @@ export default function ServiceCard({
         sx={{
           fontFamily: "Exo, sans-serif",
           color: "#f5f5f5",
-          fontSize: "16px",
+          fontSize: { xs: "0.8rem", sm:"0.9rem", md: "1.0rem", lg:"1.1rem"},
           fontWeight: 300,
         }}
       >

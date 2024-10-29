@@ -18,7 +18,7 @@ const AboutCard: React.FC<AboutCardProps> = ({
     <Card
       sx={{
         border: "1px solid #f5f5f5", // Borde blanco
-        padding: "1.5rem",
+        padding: { xs: "0.8rem", sm:"1rem", md: "1.3rem", lg:"1.5rem"},
         borderRadius: "8px",
         textAlign: "left",
         color: "#f5f5f5",
@@ -51,7 +51,7 @@ const AboutCard: React.FC<AboutCardProps> = ({
             color: "#FFC300", // Color amarillo
             marginBottom: "0.5rem",
             fontFamily: "Exo, sans-serif",
-            fontSize: "36px",
+            fontSize: { xs: "1.6rem", sm:"1.7rem", md: "1.8rem", lg:"1.9rem"},
             marginRight: "0.5rem",
           }}
         >
@@ -64,7 +64,7 @@ const AboutCard: React.FC<AboutCardProps> = ({
             color: "#f5f5f5", // Color del texto
             marginBottom: "0.5rem",
             fontFamily: "Exo, sans-serif",
-            fontSize: "24px",
+            fontSize: { xs: "1.2rem", sm:"1.3rem", md: "1.4rem", lg:"1.5rem"},
           }}
         >
           {title}
@@ -76,7 +76,7 @@ const AboutCard: React.FC<AboutCardProps> = ({
             color: "#f5f5f5",
             fontFamily: "Exo, sans-serif",
             fontWeight: 300,
-            fontSize: "16px",
+            fontSize: { xs: "0.8rem", sm:"0.9rem", md: "1.0rem", lg:"1.1rem"},
           }}
         >
           {description}

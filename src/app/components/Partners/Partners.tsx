@@ -62,7 +62,7 @@ export default function Partners() {
         justifyContent: "center",
         alignItems: "center",
         width: "100%", // Asegurar que el contenedor ocupe todo el ancho
-        marginBottom: 20,
+        marginBottom: 14, 
       }}
     >
       <Box sx={{ width: "95%" }}>

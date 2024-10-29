@@ -108,16 +108,8 @@ export default function Industries() {
       imageUrl: seguros.src,
     },
     {
-      title: "",
-      imageUrl: "",
-    },
-    {
       title: "Telecomunicaciones",
       imageUrl: telecom.src,
-    },
-    {
-      title: "",
-      imageUrl: "",
     },
   ];
 
@@ -129,8 +121,8 @@ export default function Industries() {
         alignItems: "center",
         justifyContent: "center",
         paddingTop: 4,
-        height: "100vh",
-        mt: 20,
+        minHeight: { xs: '100vh', md: 'auto' }, // Altura mínima en pantallas pequeñas
+        mt: { xs: 0, md: 8 }, // Ajuste de margen para pantallas pequeñas
       }}
     >
       {/* Título de la sección */}
@@ -140,22 +132,40 @@ export default function Industries() {
           fontFamily: "Exo, sans-serif",
           color: "#f5f5f5",
           fontWeight: 500,
-          fontSize: "52px",
+          fontSize: { xs: "28px", sm:"36px", md: "44px", lg:"52px"},
           textAlign: "center",
           marginBottom: 12,
+          marginTop:{ xs: 10, sm:9, md:0, lg:0},
         }}
       >
-        Hemos trabajado con clientes de diversas industrias, ayudando a
-        optimizar su logística, marketing y operaciones.
+        Hemos trabajado con clientes de diversas industrias, ayudando a optimizar su logística, marketing y operaciones.
       </Typography>
 
       {/* Grid layout simple */}
       <Grid container spacing={2} sx={{ maxWidth: "1200px", width: "100%" }}>
-        {industryCards.map((card, index) => (
-          <Grid item xs={12} sm={6} md={4} key={index}>
-            <IndustryCard title={card.title} imageUrl={card.imageUrl} />
-          </Grid>
-        ))}
+        {industryCards.map((card, index) => {
+          const isLastItem = index === industryCards.length - 1;
+          const itemsInLastRow = industryCards.length % 3; // Para pantallas grandes, cada fila tiene 3 elementos (md=4)
+          const centerLastItem = isLastItem && itemsInLastRow === 1; // Centrar si la última fila tiene 1 solo elemento
+
+          return (
+            <Grid
+              item
+              xs={12}
+              sm={6}
+              md={4}
+              key={index}
+              sx={{
+                ...(centerLastItem && {
+                  marginLeft: "auto",
+                  marginRight: "auto",
+                }),
+              }}
+            >
+              <IndustryCard title={card.title} imageUrl={card.imageUrl} />
+            </Grid>
+          );
+        })}
       </Grid>
     </Box>
   );

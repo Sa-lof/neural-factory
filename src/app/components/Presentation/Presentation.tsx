@@ -4,14 +4,15 @@ import { Box, Typography } from "@mui/material";
 const Presentation: React.FC = () => {
   return (
     <Box
-      sx={{
-        textAlign: "center",
-        padding: "4rem 2rem", // Espaciado adecuado para darle margen al contenido
-        color: "#f5f5f5", // Color de texto claro
-        alignItems: "center",
-        alignContent: "center",
-        height: "100vh", // Ajustar la altura al 100% del viewport
-      }}
+    sx={{
+      textAlign: "center",
+      padding: "4rem 2rem",
+      color: "#f5f5f5",
+      alignItems: "center",
+      alignContent: "center",
+      height: "100vh",
+      paddingTop: { xs: "0.6rem", sm: "0.8rem", md: "1rem", lg: "1rem" }, // Reducir margen superior aquí
+    }}
     >
       {/* Título principal */}
       <Typography
@@ -21,7 +22,7 @@ const Presentation: React.FC = () => {
           color: "#FFF",
           marginBottom: "2rem", // Espaciado inferior
           fontFamily: "Exo, sans-serif",
-          fontSize: "100px",
+          fontSize: { xs: "40px", sm:"60px", md: "80px", lg:"100px"},
         }}
       >
         ¿Que es <span style={{ color: "#FFC300" }}>Neural Factory</span>?{" "}
@@ -30,7 +31,7 @@ const Presentation: React.FC = () => {
       <Typography
         variant="body1"
         sx={{
-          fontSize: "32px", // Tamaño de fuente un poco más grande
+          fontSize: { xs: "0.8rem", sm:"1rem", md: "1.3rem", lg:"1.5rem"},
           lineHeight: "1.75", // Altura de línea para mayor legibilidad
           maxWidth: "1600px", // Ancho máximo para que el texto no ocupe todo el ancho
           margin: "0 auto", // Centrar el texto

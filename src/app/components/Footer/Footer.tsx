@@ -52,7 +52,7 @@ export default function Footer() {
           sx={{
             fontFamily: "Exo, sans-serif",
             fontWeight: 700,
-            fontSize: { xs: "48px", md: "92px" },
+            fontSize: { xs: "20px", sm:"33px", md: "50px", lg:"70px"},
             color: "#f5f5f5",
             whiteSpace: "nowrap",
           }}
@@ -63,9 +63,10 @@ export default function Footer() {
           component="span"
           sx={{
             color: "#FFC300",
-            fontSize: { xs: "48px", md: "92px" },
+            fontSize: { xs: "20px", sm:"33px", md: "50px", lg:"70px"},
             fontWeight: 700,
-            marginLeft: "8px",
+            marginLeft: { xs: "2px", sm:"4px", md: "6px", lg:"8px"},
+            marginRight: { xs: "2px", sm:"4px", md: "6px", lg:"8px"},
           }}
         >
           @
@@ -75,7 +76,7 @@ export default function Footer() {
           sx={{
             fontFamily: "Exo, sans-serif",
             fontWeight: 700,
-            fontSize: { xs: "48px", md: "92px" },
+            fontSize: { xs: "20px", sm:"33px", md: "50px", lg:"70px"},
             color: "#f5f5f5",
             whiteSpace: "nowrap",
           }}

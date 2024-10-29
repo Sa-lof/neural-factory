@@ -62,7 +62,7 @@ export default function Home() {
   return (
     <>
       <Navbar />
-      <Box>
+      <Box sx={{overflowX: "hidden"}}>
         <Header />
         <Presentation />
         <AboutGrid cards={cards} />

@@ -7,32 +7,43 @@ import CustomButton from "../customButton/customButton";
 const Navbar = () => {
   return (
     <AppBar
-      position="fixed" // Use fixed instead of sticky
-      sx={{ backgroundColor: "transparent", padding: "10px 0", height: "64px" }} // Adjust the height of the navbar
+      position="fixed"
+      sx={{
+        backgroundColor: "transparent",
+        padding: { xs: "5px 0", md: "10px 0" },
+        height: { xs: "56px", md: "64px" },
+      }}
       elevation={0}
     >
-      <Toolbar sx={{ justifyContent: "space-between", margin: "0 52px" }}>
+      <Toolbar
+        sx={{
+          justifyContent: "space-between",
+          margin: { xs: "0 16px", md: "0 52px" },
+        }}
+      >
         {/* Logo */}
         <Box display="flex" alignItems="center">
           <Image
             src={logo}
             alt="Logo"
-            width={50} // Adjust the size as needed
-            height={50}
-            style={{height: "auto", width: "auto"}}
+            width={40} // Smaller logo for mobile
+            height={40}
+            style={{ height: "auto", width: "auto" }}
           />
         </Box>
 
-        {/* Button */}
-        <CustomButton
-          href="/contact"
-          borderColor="#FFC300"
-          textColor="#FFC300"
-          hoverBackgroundColor="#FFC300"
-          hoverTextColor="#F5F5F5"
-        >
-          Contacto
-        </CustomButton>
+        {/* Responsive Button */}
+        <Box>
+          <CustomButton
+            href="/contact"
+            borderColor="#FFC300"
+            textColor="#FFC300"
+            hoverBackgroundColor="#FFC300"
+            hoverTextColor="#F5F5F5"
+          >
+            Contacto
+          </CustomButton>
+        </Box>
       </Toolbar>
     </AppBar>
   );

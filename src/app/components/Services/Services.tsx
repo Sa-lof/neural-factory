@@ -59,14 +59,15 @@ export default function Services() {
     <Box
       sx={{
         display: "flex",
-        justifyContent: "center", // Center horizontally
-        alignItems: "center", // Center vertically
-        height: "100vh", // Full height of the viewport
+        justifyContent: "center",
+        alignItems: "center", 
+        height: "100vh",
         fontFamily: "Exo, sans-serif",
         marginRight: 12,
         marginLeft: 12,
         width: "90%",
-        margin: "0 auto", // Center container on the page
+        margin: "0 auto", 
+        flexDirection: { xs: "column", md: "row" },
       }}
       onScroll={handleScroll}
     >
@@ -85,7 +86,7 @@ export default function Services() {
             fontWeight: 700,
             color: "#FFC300",
             marginBottom: "16px",
-            fontSize: "52px",
+            fontSize: { xs: "28px", sm:"36px", md: "44px", lg:"52px"},
           }}
         >
           En NF te ofrecemos los mejores servicios
