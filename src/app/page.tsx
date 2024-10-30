@@ -1,5 +1,6 @@
+"use client";
 import Header from "./components/Header/Header";
-import Navbar from "./components/Navbar/Navbar"; // Ensure the correct path
+import Navbar from "./components/Navbar/Navbar"; 
 import { Box } from "@mui/material";
 import Presentation from "./components/Presentation/Presentation";
 import AboutGrid from "./components/aboutGrid/aboutGrid";
@@ -14,6 +15,8 @@ import about2 from "./assets/about/about_2.jpg";
 import about3 from "./assets/about/about_3.jpg";
 import about4 from "./assets/about/about_4.jpg";
 import about5 from "./assets/about/about_5.jpg";
+import PerformanceChart from "./components/PerformanceChart/PerformanceChart";
+import PerformanceChartLargeDataset from "./components/PerformanceChartLargeDataset/PerformanceChartLargeDataset";
 
 const cards = [
   {
@@ -54,7 +57,7 @@ const cards = [
     title: "Valores",
     description:
       "Eficiencia, Asequibilidad, Innovación, Colaboración",
-    size: { xs: 12, sm: 12, md: 6 }, // Tarjetas inferiores más grandes
+    size: { xs: 12, sm: 12, md: 6 },
   },
 ];
 
@@ -67,7 +70,8 @@ export default function Home() {
         <Presentation />
         <AboutGrid cards={cards} />
         <CardStackDemo />
-        <Partners />
+        <PerformanceChart />
+        <PerformanceChartLargeDataset />
         <Services />
         <Industries />
         <Contact />
