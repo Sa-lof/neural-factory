@@ -17,7 +17,7 @@ import about4 from "./assets/about/about_4.jpg";
 import about5 from "./assets/about/about_5.jpg";
 import PerformanceChart from "./components/PerformanceChart/PerformanceChart";
 import PerformanceChartLargeDataset from "./components/PerformanceChartLargeDataset/PerformanceChartLargeDataset";
-
+import PerformanceChartLastDataset from "./components/PerformanceChartLastDataset/PerformanceChartLastDataset";
 const cards = [
   {
     image: about1.src,
@@ -72,6 +72,7 @@ export default function Home() {
         <CardStackDemo />
         <PerformanceChart />
         <PerformanceChartLargeDataset />
+        <PerformanceChartLastDataset />
         <Services />
         <Industries />
         <Contact />
