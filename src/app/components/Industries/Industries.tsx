@@ -1,15 +1,15 @@
 "use client";
 import { Box, Typography, Grid } from "@mui/material";
-import banca from "../../assets/industries/banca.jpg";
+import banca from "../../assets/industries/banca.png";
 import educacion from "../../assets/industries/education.jpg";
-import energias from "../../assets/industries/energias.jpg";
+import energias from "../../assets/industries/energias.png";
 import gobierno from "../../assets/industries/gobierno.png";
-import logistics from "../../assets/industries/logistics.jpg";
-import manufactura from "../../assets/industries/manufactura.jpg";
-import retail from "../../assets/industries/retail.jpg";
+import logistics from "../../assets/industries/logistics.png";
+import manufactura from "../../assets/industries/manufacture.png";
+import retail from "../../assets/industries/retail.png";
 import salud from "../../assets/industries/salud.png";
-import seguros from "../../assets/industries/seguros.jpg";
-import telecom from "../../assets/industries/telecom.jpg";
+import seguros from "../../assets/industries/seguros.png";
+import telecom from "../../assets/industries/telecom.png";
 
 interface IndustryCardProps {
   title: string;
