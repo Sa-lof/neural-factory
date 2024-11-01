@@ -2,10 +2,10 @@
 import { Box, Typography } from "@mui/material";
 import ServiceCard from "../serviceCard/serviceCard";
 import { useState } from "react";
-import service1 from "../../assets/services/service_1.png";
-import service2 from "../../assets/services/service_2.png";
+import service1 from "../../assets/services/analisis.png";
+import service2 from "../../assets/services/automatizacion.png";
 import service3 from "../../assets/services/service_3.png";
-import service4 from "../../assets/services/service_4.png";
+import service4 from "../../assets/services/gestionProyectos.png";
 import service5 from "../../assets/services/service_5.jpg";
 
 const servicesData = [

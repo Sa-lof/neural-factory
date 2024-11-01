@@ -7,7 +7,7 @@ const CARDS = [
   {
     id: 0,
     name: "Daniel Núñez (Científico de Datos)",
-    avatar: "/path/to/avatar1.jpg",
+    avatar: "/assets/presentation/Daniel.jpg",
     socialLink: "https://twitter.com/daniel", // Editable social media link
     content: (
       <>
@@ -21,7 +21,7 @@ const CARDS = [
   {
     id: 1,
     name: "Ricardo López",
-    avatar: "/path/to/avatar2.jpg",
+    avatar: "/assets/presentation/Richi.jpg",
     socialLink: "https://linkedin.com/in/maria", // Editable social media link
     content: (
       <>
@@ -33,7 +33,7 @@ const CARDS = [
   {
     id: 2,
     name: "Efraín",
-    avatar: "/path/to/avatar3.jpg",
+    avatar: "/assets/presentation/Efrain.jpg",
     socialLink: "https://facebook.com/carlos", // Editable social media link
     content: (
       <>

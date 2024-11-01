@@ -8,14 +8,13 @@ export const HoverText = ({ text }: { text: string }) => {
       initial="rest"
       whileHover="hover"
       animate="rest"
-      className="flex justify-center items-center w-full"
-      style={{ height: "20%" }} // Ajustamos la altura para que ocupe el 20% del contenedor padre
+      className="flex justify-center items-center w-full h-[20vh] sm:pt-[10vh] lg:pt-[40vh] pb-[5vh]"
     >
       <motion.h1
-        className="text-[240px] font-bold relative"
+        className="font-bold relative text-[10vw] sm:text-[120px] lg:text-[240px]"
         style={{
           color: "transparent",
-          WebkitTextStroke: "2px #FFC300", // Outline color
+          WebkitTextStroke: "2px #FFC300", // Color del contorno
         }}
         variants={{
           rest: {
@@ -24,8 +23,8 @@ export const HoverText = ({ text }: { text: string }) => {
           hover: {
             WebkitTextFillColor: "#FFC300", // Se rellena con amarillo al hacer hover
             transition: {
-              duration: 2.5, // Aumentamos la duración para hacerlo más lento
-              ease: [0.25, 0.1, 0.25, 1], // Mantenemos el easing suave
+              duration: 2.5, // Duración de la animación
+              ease: [0.25, 0.1, 0.25, 1], // Easing suave
             },
           },
         }}

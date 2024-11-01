@@ -10,14 +10,11 @@ import Services from "./components/Services/Services";
 import Industries from "./components/Industries/Industries";
 import Contact from "./components/Contact/Contact";
 import Footer from "./components/Footer/Footer";
-import about1 from "./assets/about/about_1.jpg";
-import about2 from "./assets/about/about_2.jpg";
-import about3 from "./assets/about/about_3.jpg";
-import about4 from "./assets/about/about_4.jpg";
-import about5 from "./assets/about/about_5.jpg";
-import PerformanceChart from "./components/PerformanceChart/PerformanceChart";
-import PerformanceChartLargeDataset from "./components/PerformanceChartLargeDataset/PerformanceChartLargeDataset";
-import PerformanceChartLastDataset from "./components/PerformanceChartLastDataset/PerformanceChartLastDataset";
+import about1 from "./assets/about/quienesSomos.png";
+import about2 from "./assets/about/historia.png";
+import about3 from "./assets/about/mision.png";
+import about4 from "./assets/about/vision.png";
+import about5 from "./assets/about/valores.png";
 import PerformanceCarousel from "./components/PerformanceCarousel/PerformanceCarousel"
 const cards = [
   {
