@@ -34,7 +34,7 @@ const CARDS = [
     id: 2,
     name: "Efraín",
     avatar: "/assets/presentation/Efrain.jpg",
-    socialLink: "https://facebook.com/carlos", // Editable social media link
+    socialLink: "https://facebook.com/carlos",
     content: (
       <>
         Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus
