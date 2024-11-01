@@ -18,6 +18,7 @@ import about5 from "./assets/about/about_5.jpg";
 import PerformanceChart from "./components/PerformanceChart/PerformanceChart";
 import PerformanceChartLargeDataset from "./components/PerformanceChartLargeDataset/PerformanceChartLargeDataset";
 import PerformanceChartLastDataset from "./components/PerformanceChartLastDataset/PerformanceChartLastDataset";
+import PerformanceCarousel from "./components/PerformanceCarousel/PerformanceCarousel"
 const cards = [
   {
     image: about1.src,
@@ -70,9 +71,7 @@ export default function Home() {
         <Presentation />
         <AboutGrid cards={cards} />
         <CardStackDemo />
-        <PerformanceChart />
-        <PerformanceChartLargeDataset />
-        <PerformanceChartLastDataset />
+        <PerformanceCarousel />
         <Services />
         <Industries />
         <Contact />
