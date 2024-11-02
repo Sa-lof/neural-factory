@@ -114,13 +114,6 @@ export const CardStack = ({
               target="_blank"
             >
               Saludar a {card.name}{" "}
-              <span
-                role="img"
-                aria-label="wave"
-                style={{ marginLeft: "8px" }}
-              >
-                👋
-              </span>
             </Button>
           </Box>
         </motion.div>

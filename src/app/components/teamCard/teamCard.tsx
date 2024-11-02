@@ -8,7 +8,7 @@ const CARDS = [
     id: 0,
     name: "Daniel Núñez (Científico de Datos)",
     avatar: "/assets/presentation/Daniel.jpg",
-    socialLink: "https://twitter.com/daniel", // Editable social media link
+    socialLink: "#",
     content: (
       <>
         Daniel es científico de datos con experiencia en IA, big data y
@@ -21,12 +21,15 @@ const CARDS = [
   {
     id: 1,
     name: "Ricardo López",
-    avatar: "/assets/presentation/Richi.jpg",
-    socialLink: "https://linkedin.com/in/maria", // Editable social media link
+    avatar: "/assets/presentation/Richi.jpeg",
+    socialLink: "#",
     content: (
       <>
-        Nulla vitae elit libero, a pharetra augue. Maecenas sed diam eget risus
-        varius blandit sit amet non magna. Curabitur blandit tempus porttitor.
+        Científico de Datos con formación en Nanotecnología y Ciencia de Datos,
+        especializado en redes neuronales y optimización de procesos.
+        Experiencia en industrias farmacéutica y tecnológica, desarrollando
+        modelos predictivos para mejorar la gestión y toma de decisiones
+        estratégicas.
       </>
     ),
   },
@@ -34,11 +37,14 @@ const CARDS = [
     id: 2,
     name: "Efraín",
     avatar: "/assets/presentation/Efrain.jpg",
-    socialLink: "https://facebook.com/carlos",
+    socialLink: "#",
     content: (
       <>
-        Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus
-        magna, vel scelerisque nisl consectetur.
+        Actuario por la UNAM con estudios en Modelación Matemática,
+        especializado en optimización y modelos determinísticos y
+        probabilísticos de inventarios. Experiencia en Ciencia de Datos
+        aplicando análisis matemático y modelación para optimizar la gestión de
+        recursos empresariales.
       </>
     ),
   },
@@ -48,10 +54,10 @@ export function CardStackDemo() {
   return (
     <Box
       sx={{
-        marginTop: { xs:12 , sm: 16, md: 20, lg:24},
-        marginBottom:{ xs:60 , sm: 60, md: 70, lg:70},
-        marginLeft:3,
-        marginRight:3,
+        marginTop: { xs: 12, sm: 16, md: 20, lg: 24 },
+        marginBottom: { xs: 60, sm: 60, md: 70, lg: 70 },
+        marginLeft: 3,
+        marginRight: 3,
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
@@ -67,7 +73,7 @@ export function CardStackDemo() {
           fontFamily: "Exo, sans-serif",
           color: "#f5f5f5",
           fontWeight: 700,
-          fontSize: { xs: "28px", sm:"36px", md: "44px", lg:"52px"},
+          fontSize: { xs: "28px", sm: "36px", md: "44px", lg: "52px" },
           marginBottom: 8,
         }}
       >
