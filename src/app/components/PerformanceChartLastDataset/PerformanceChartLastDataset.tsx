@@ -43,7 +43,7 @@ import {
   ];
   
   // Custom Tooltip component (sin mostrar el tooltip por hover)
-  const CustomTooltip = ({ active, payload }: any) => {
+  const CustomTooltip = ({  payload }: any) => { //eslint-disable-line
     if (payload && payload.length) {
       const { name, comparison } = payload[0].payload;
       return (
@@ -93,8 +93,8 @@ import {
               ))}
                 <LabelList
                     dataKey="time"
-                    position="right"
-                    formatter={(value: any) => (value === 0 ? "More than two hours or not loaded" : `${value} sec`)}
+                    position="right" 
+                    formatter={(value: any) => (value === 0 ? "More than two hours or not loaded" : `${value} sec`)} //eslint-disable-line
                     style={{
                     fontSize: 'clamp(0.70rem, 0.70vw + 0.5rem, 1rem)',
                     margin: '0 auto',

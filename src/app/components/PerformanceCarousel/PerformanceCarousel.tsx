@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Box, Typography, Fade, IconButton } from "@mui/material";
+import { Box, Fade, IconButton } from "@mui/material";
 import CircleIcon from "@mui/icons-material/Circle"; // Importa un ícono circular para los indicadores
 import PerformanceChart from "../PerformanceChart/PerformanceChart";
 import PerformanceChartLargeDataset from "../PerformanceChartLargeDataset/PerformanceChartLargeDataset";
@@ -15,7 +15,7 @@ const PerformanceCarousel: React.FC = () => {
   const [activeStep, setActiveStep] = useState(0);
   const maxSteps = charts.length;
 
-  const handleNext = () => setActiveStep((prevStep) => (prevStep + 1) % maxSteps);
+  const handleNext = () => setActiveStep((prevStep) => (prevStep + 1) % maxSteps); //eslint-disable-line
 
   const handleStepChange = (step: number) => setActiveStep(step);
 
@@ -25,7 +25,7 @@ const PerformanceCarousel: React.FC = () => {
     }, 5000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [handleNext]);
 
   return (
     <Box

@@ -5,7 +5,6 @@ import { Box } from "@mui/material";
 import Presentation from "./components/Presentation/Presentation";
 import AboutGrid from "./components/aboutGrid/aboutGrid";
 import { CardStackDemo } from "./components/teamCard/teamCard";
-import Partners from "./components/Partners/Partners";
 import Services from "./components/Services/Services";
 import Industries from "./components/Industries/Industries";
 import Contact from "./components/Contact/Contact";
