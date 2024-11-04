@@ -14,7 +14,7 @@ import about2 from "./assets/about/historia.png";
 import about3 from "./assets/about/mision.png";
 import about4 from "./assets/about/vision.png";
 import about5 from "./assets/about/valores.png";
-import PerformanceCarousel from "./components/PerformanceCarousel/PerformanceCarousel"
+import PerformanceCarousel from "./components/PerformanceCarousel/PerformanceCarousel";
 import { useEffect, useState } from "react";
 
 const cards = [
@@ -24,7 +24,7 @@ const cards = [
     title: "¿Quiénes somos?",
     description:
       "Transformamos los procesos empresariales a través de soluciones avanzadas de Inteligencia Artificial (IA) y Machine Learning (ML). Nos enfocamos en ofrecer tecnología de vanguardia que maximiza la eficiencia y la productividad, sin comprometer el presupuesto.",
-    size: { xs: 12, sm: 6, md: 4 }, // Tarjetas superiores más pequeñas
+    size: { xs: 12, sm: 6, md: 4 },
   },
   {
     image: about2.src,
@@ -32,7 +32,7 @@ const cards = [
     title: "Historia",
     description:
       "Neural Factory se fundó sobre el principio de hacer que la IA sea accesible para todas las empresas. Estamos en continua evolución para mantenernos a la vanguardia de la innovación en IA.",
-    size: { xs: 12, sm: 6, md: 4 }, // Tarjetas superiores más pequeñas
+    size: { xs: 12, sm: 6, md: 4 },
   },
   {
     image: about3.src,
@@ -40,7 +40,7 @@ const cards = [
     title: "Misión",
     description:
       "Acelerar la transformación digital de las empresas mediante soluciones accesibles de IA y ML, optimizando recursos y garantizando un alto retorno de la inversión.",
-    size: { xs: 12, sm: 6, md: 4 }, // Tarjetas superiores más pequeñas
+    size: { xs: 12, sm: 6, md: 4 },
   },
   {
     image: about4.src,
@@ -48,7 +48,7 @@ const cards = [
     title: "Visión",
     description:
       "Convertirnos en líderes del desarrollo de IA/ML, ofreciendo herramientas tecnológicas efectivas que permitan a las empresas evolucionar sin incurrir en costos significativos.",
-    size: { xs: 12, sm: 12, md: 6 }, // Tarjetas inferiores más grandes
+    size: { xs: 12, sm: 12, md: 6 },
   },
   {
     image: about5.src,
@@ -59,17 +59,18 @@ const cards = [
     size: { xs: 12, sm: 12, md: 6 },
   },
 ];
+
 export default function Home() {
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(true); // Inicia en modo oscuro
 
   const theme = createTheme({
     palette: {
       mode: darkMode ? "dark" : "light",
       background: {
-        default: darkMode ? "#121212" : "#FFFFFF", // Fondo negro en modo oscuro y blanco en modo claro
+        default: darkMode ? "#121212" : "#FFFFFF",
       },
       primary: {
-        main: darkMode ? "#FFC300" : "#0000FF", // Amarillo en oscuro y azul en claro
+        main: darkMode ? "#FFC300" : "#0000FF",
       },
     },
   });
