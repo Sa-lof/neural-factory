@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Box, Fade, IconButton } from "@mui/material";
+import { Box, Fade, IconButton, useTheme } from "@mui/material";
 import CircleIcon from "@mui/icons-material/Circle"; // Importa un ícono circular para los indicadores
 import PerformanceChart from "../PerformanceChart/PerformanceChart";
 import PerformanceChartLargeDataset from "../PerformanceChartLargeDataset/PerformanceChartLargeDataset";
@@ -14,8 +14,12 @@ const charts = [
 const PerformanceCarousel: React.FC = () => {
   const [activeStep, setActiveStep] = useState(0);
   const maxSteps = charts.length;
+  const theme = useTheme();
 
-  const handleNext = () => setActiveStep((prevStep) => (prevStep + 1) % maxSteps); //eslint-disable-line
+  const activeColor = theme.palette.mode === "light" ? "#00A8C1" : "#FFC300"; // Azul en claro, amarillo en oscuro
+  const inactiveColor = theme.palette.mode === "light" ? "gray" : "#f5f5f5"; // Gris en claro, blanco en oscuro
+
+  const handleNext = () => setActiveStep((prevStep) => (prevStep + 1) % maxSteps);
 
   const handleStepChange = (step: number) => setActiveStep(step);
 
@@ -67,7 +71,7 @@ const PerformanceCarousel: React.FC = () => {
             key={index}
             onClick={() => handleStepChange(index)}
             sx={{
-              color: index === activeStep ? "#FFC300" : "gray",
+              color: index === activeStep ? activeColor : inactiveColor,
               transition: "color 0.3s",
             }}
           >

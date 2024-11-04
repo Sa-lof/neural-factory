@@ -1,9 +1,13 @@
 import { useState } from "react";
-import { Box, Typography, TextField, Snackbar, Alert, AlertColor } from "@mui/material";
+import { Box, Typography, TextField, Snackbar, Alert, AlertColor, useTheme } from "@mui/material";
 import CustomButton from "../customButton/customButton";
 import emailjs from 'emailjs-com';
 
 export default function Contact() {
+  const theme = useTheme();
+  const primaryColor = theme.palette.mode === "light" ? "#00A8C1" : "#FFC300"; // Azul en claro, amarillo en oscuro
+  const textColor = theme.palette.mode === "light" ? "#000000" : "#f5f5f5"; // Negro en claro, blanco en oscuro
+
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
@@ -62,13 +66,14 @@ export default function Contact() {
         height: "100vh",
         fontFamily: "Exo, sans-serif",
         padding: "40px",
+        color: textColor, // Color de texto dinámico
       }}
     >
       {/* Title */}
       <Typography
         variant="h4"
         sx={{
-          color: "#f5f5f5",
+          color: textColor,
           fontWeight: 500,
           fontSize: { xs: "28px", sm: "36px", md: "44px", lg: "52px" },
           textAlign: "center",
@@ -80,7 +85,7 @@ export default function Contact() {
         <Typography
           component="span"
           sx={{
-            color: "#FFC300",
+            color: primaryColor,
             fontWeight: 500,
             fontSize: { xs: "28px", sm: "36px", md: "44px", lg: "52px" },
             fontFamily: "Exo, sans-serif",
@@ -112,14 +117,14 @@ export default function Contact() {
           sx={{
             "& .MuiOutlinedInput-root": {
               fontFamily: "Exo, sans-serif",
-              color: "#f5f5f5",
+              color: textColor,
               backgroundColor: "transparent",
               borderRadius: "8px",
               "& fieldset": {
-                borderColor: "#f5f5f5",
+                borderColor: textColor,
               },
               "&:hover fieldset": {
-                borderColor: "#FFC300",
+                borderColor: primaryColor,
               },
             },
             marginBottom: "16px",
@@ -136,14 +141,14 @@ export default function Contact() {
           sx={{
             "& .MuiOutlinedInput-root": {
               fontFamily: "Exo, sans-serif",
-              color: "#f5f5f5",
+              color: textColor,
               backgroundColor: "transparent",
               borderRadius: "8px",
               "& fieldset": {
-                borderColor: "#f5f5f5",
+                borderColor: textColor,
               },
               "&:hover fieldset": {
-                borderColor: "#FFC300",
+                borderColor: primaryColor,
               },
             },
             marginBottom: "16px",
@@ -162,14 +167,14 @@ export default function Contact() {
           sx={{
             "& .MuiOutlinedInput-root": {
               fontFamily: "Exo, sans-serif",
-              color: "#f5f5f5",
+              color: textColor,
               backgroundColor: "transparent",
               borderRadius: "8px",
               "& fieldset": {
-                borderColor: "#f5f5f5",
+                borderColor: textColor,
               },
               "&:hover fieldset": {
-                borderColor: "#FFC300",
+                borderColor: primaryColor,
               },
             },
             marginBottom: "16px",
@@ -180,7 +185,7 @@ export default function Contact() {
         <Typography
           variant="body1"
           sx={{
-            color: "#f5f5f5",
+            color: textColor,
             fontWeight: 400,
             fontSize: "20px",
             textAlign: "center",
@@ -191,7 +196,7 @@ export default function Contact() {
           Llena el{" "}
           <Typography
             component="span"
-            sx={{ color: "#FFC300", fontWeight: 400, fontSize: "20px" }}
+            sx={{ color: primaryColor, fontWeight: 400, fontSize: "20px" }}
           >
             formulario
           </Typography>{" "}

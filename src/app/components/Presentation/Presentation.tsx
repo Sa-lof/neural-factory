@@ -1,41 +1,45 @@
 import React from "react";
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, useTheme } from "@mui/material";
 
 const Presentation: React.FC = () => {
+  const theme = useTheme();
+  const primaryColor = theme.palette.mode === "light" ? "#00A8C1" : "#FFC300"; // Azul en claro, amarillo en oscuro
+  const textColor = theme.palette.mode === "light" ? "#000000" : "#f5f5f5"; // Negro en claro, blanco en oscuro
+
   return (
     <Box
-    sx={{
-      textAlign: "center",
-      padding: "4rem 2rem",
-      color: "#f5f5f5",
-      alignItems: "center",
-      alignContent: "center",
-      height: "100vh",
-      paddingTop: { xs: "0.6rem", sm: "0.8rem", md: "1rem", lg: "1rem" }, // Reducir margen superior aquí
-    }}
+      sx={{
+        textAlign: "center",
+        padding: "4rem 2rem",
+        color: textColor,
+        alignItems: "center",
+        alignContent: "center",
+        height: "100vh",
+        paddingTop: { xs: "0.6rem", sm: "0.8rem", md: "1rem", lg: "1rem" },
+      }}
     >
       {/* Título principal */}
       <Typography
         variant="h3"
         sx={{
           fontWeight: 700,
-          color: "#FFF",
-          marginBottom: "2rem", // Espaciado inferior
+          color: textColor,
+          marginBottom: "2rem",
           fontFamily: "Exo, sans-serif",
-          fontSize: { xs: "40px", sm:"60px", md: "80px", lg:"100px"},
+          fontSize: { xs: "40px", sm: "60px", md: "80px", lg: "100px" },
         }}
       >
-        ¿Que es <span style={{ color: "#FFC300" }}>Neural Factory</span>?{" "}
+        ¿Qué es <span style={{ color: primaryColor }}>Neural Factory</span>?{" "}
       </Typography>
 
       <Typography
         variant="body1"
         sx={{
-          fontSize: { xs: "0.8rem", sm:"1rem", md: "1.3rem", lg:"1.5rem"},
-          lineHeight: "1.75", // Altura de línea para mayor legibilidad
-          maxWidth: "1600px", // Ancho máximo para que el texto no ocupe todo el ancho
-          margin: "0 auto", // Centrar el texto
-          color: "#f5f5f5", // Color del texto
+          fontSize: { xs: "0.8rem", sm: "1rem", md: "1.3rem", lg: "1.5rem" },
+          lineHeight: "1.75",
+          maxWidth: "1600px",
+          margin: "0 auto",
+          color: textColor,
           fontFamily: "Exo, sans-serif",
           fontWeight: 300,
         }}

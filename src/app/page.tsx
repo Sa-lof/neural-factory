@@ -1,7 +1,7 @@
 "use client";
 import Header from "./components/Header/Header";
 import Navbar from "./components/Navbar/Navbar"; 
-import { Box } from "@mui/material";
+import { Box, CssBaseline, ThemeProvider, createTheme } from "@mui/material";
 import Presentation from "./components/Presentation/Presentation";
 import AboutGrid from "./components/aboutGrid/aboutGrid";
 import { CardStackDemo } from "./components/teamCard/teamCard";
@@ -15,6 +15,8 @@ import about3 from "./assets/about/mision.png";
 import about4 from "./assets/about/vision.png";
 import about5 from "./assets/about/valores.png";
 import PerformanceCarousel from "./components/PerformanceCarousel/PerformanceCarousel"
+import { useEffect, useState } from "react";
+
 const cards = [
   {
     image: about1.src,
@@ -57,12 +59,32 @@ const cards = [
     size: { xs: 12, sm: 12, md: 6 },
   },
 ];
-
 export default function Home() {
+  const [darkMode, setDarkMode] = useState(false);
+
+  const theme = createTheme({
+    palette: {
+      mode: darkMode ? "dark" : "light",
+      background: {
+        default: darkMode ? "#121212" : "#FFFFFF", // Fondo negro en modo oscuro y blanco en modo claro
+      },
+      primary: {
+        main: darkMode ? "#FFC300" : "#0000FF", // Amarillo en oscuro y azul en claro
+      },
+    },
+  });
+
+  const toggleDarkMode = () => setDarkMode(!darkMode);
+
+  useEffect(() => {
+    document.documentElement.setAttribute("data-theme", darkMode ? "dark" : "light");
+  }, [darkMode]);
+
   return (
-    <>
-      <Navbar />
-      <Box sx={{overflowX: "hidden"}}>
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <Navbar toggleDarkMode={toggleDarkMode} darkMode={darkMode} />
+      <Box sx={{ overflowX: "hidden", minHeight: "100vh", bgcolor: "background.default" }}>
         <Header />
         <Presentation />
         <AboutGrid cards={cards} />
@@ -73,6 +95,6 @@ export default function Home() {
         <Contact />
         <Footer />
       </Box>
-    </>
+    </ThemeProvider>
   );
 }
