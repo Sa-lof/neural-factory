@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, CardContent, CardMedia, Typography } from "@mui/material";
+import { Card, CardContent, CardMedia, Typography, useTheme } from "@mui/material";
 
 interface AboutCardProps {
   image: string; // Ruta de la imagen
@@ -14,20 +14,25 @@ const AboutCard: React.FC<AboutCardProps> = ({
   title,
   description,
 }) => {
+  const theme = useTheme();
+  const borderColor = theme.palette.mode === "light" ? "#000000" : "#f5f5f5"; // Negro en claro, blanco en oscuro
+  const textColor = theme.palette.mode === "light" ? "#000000" : "#f5f5f5"; // Negro en claro, blanco en oscuro
+  const highlightColor = theme.palette.mode === "light" ? "#00A8C1" : "#FFC300"; // Azul en claro, amarillo en oscuro
+
   return (
     <Card
       sx={{
-        border: "1px solid #f5f5f5", // Borde blanco
-        padding: { xs: "0.8rem", sm:"1rem", md: "1.3rem", lg:"1.5rem"},
+        border: `1px solid ${borderColor}`,
+        padding: { xs: "0.8rem", sm: "1rem", md: "1.3rem", lg: "1.5rem" },
         borderRadius: "8px",
         textAlign: "left",
-        color: "#f5f5f5",
+        color: textColor,
         transition: "transform 0.3s ease-in-out",
         height: "100%",
         "&:hover": {
-          transform: "scale(1.05)", // Efecto hover para escalar la tarjeta
+          transform: "scale(1.05)",
         },
-        backgroundColor: "transparent", // Fondo transparente si es necesario
+        backgroundColor: "transparent",
       }}
     >
       {/* Imagen */}
@@ -37,7 +42,7 @@ const AboutCard: React.FC<AboutCardProps> = ({
         alt={title}
         sx={{
           height: "150px",
-          objectFit: "cover", // Hace que la imagen cubra completamente el espacio
+          objectFit: "cover",
           marginBottom: "1rem",
         }}
       />
@@ -48,10 +53,10 @@ const AboutCard: React.FC<AboutCardProps> = ({
           variant="h5"
           sx={{
             fontWeight: 700,
-            color: "#FFC300", // Color amarillo
+            color: highlightColor,
             marginBottom: "0.5rem",
             fontFamily: "Exo, sans-serif",
-            fontSize: { xs: "1.6rem", sm:"1.7rem", md: "1.8rem", lg:"1.9rem"},
+            fontSize: { xs: "1.6rem", sm: "1.7rem", md: "1.8rem", lg: "1.9rem" },
             marginRight: "0.5rem",
           }}
         >
@@ -61,10 +66,10 @@ const AboutCard: React.FC<AboutCardProps> = ({
           variant="h5"
           sx={{
             fontWeight: 500,
-            color: "#f5f5f5", // Color del texto
+            color: textColor,
             marginBottom: "0.5rem",
             fontFamily: "Exo, sans-serif",
-            fontSize: { xs: "1.2rem", sm:"1.3rem", md: "1.4rem", lg:"1.5rem"},
+            fontSize: { xs: "1.2rem", sm: "1.3rem", md: "1.4rem", lg: "1.5rem" },
           }}
         >
           {title}
@@ -73,10 +78,10 @@ const AboutCard: React.FC<AboutCardProps> = ({
         <Typography
           variant="body2"
           sx={{
-            color: "#f5f5f5",
+            color: textColor,
             fontFamily: "Exo, sans-serif",
             fontWeight: 300,
-            fontSize: { xs: "0.8rem", sm:"0.9rem", md: "1.0rem", lg:"1.1rem"},
+            fontSize: { xs: "0.8rem", sm: "0.9rem", md: "1.0rem", lg: "1.1rem" },
           }}
         >
           {description}

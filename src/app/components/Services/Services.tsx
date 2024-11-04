@@ -1,7 +1,7 @@
 "use client";
-import { Box, Typography } from "@mui/material";
+import React, { useState } from "react";
+import { Box, Typography, useTheme } from "@mui/material";
 import ServiceCard from "../serviceCard/serviceCard";
-import { useState } from "react";
 import service1 from "../../assets/services/analisis.png";
 import service2 from "../../assets/services/automatizacion.png";
 import service3 from "../../assets/services/service_3.png";
@@ -45,6 +45,9 @@ const servicesData = [
 export default function Services() {
   const [activeIndex, setActiveIndex] = useState(0);
   console.log("Active Index:", activeIndex);
+  const theme = useTheme();
+  const primaryColor = theme.palette.mode === "light" ? "#00A8C1" : "#FFC300"; // Azul en modo claro, amarillo en oscuro
+  const textColor = theme.palette.mode === "light" ? "#000000" : "#f5f5f5"; // Negro en claro, blanco en oscuro
 
   // Handle scrolling and reveal each card based on the scroll position.
   const handleScroll = () => {
@@ -60,13 +63,13 @@ export default function Services() {
       sx={{
         display: "flex",
         justifyContent: "center",
-        alignItems: "center", 
+        alignItems: "center",
         height: "100vh",
         fontFamily: "Exo, sans-serif",
         marginRight: 12,
         marginLeft: 12,
         width: "90%",
-        margin: "0 auto", 
+        margin: "0 auto",
         flexDirection: { xs: "column", md: "row" },
       }}
       onScroll={handleScroll}
@@ -84,9 +87,9 @@ export default function Services() {
           sx={{
             fontFamily: "Exo, sans-serif",
             fontWeight: 700,
-            color: "#FFC300",
+            color: primaryColor, // Azul en modo claro, amarillo en oscuro
             marginBottom: "16px",
-            fontSize: { xs: "28px", sm:"36px", md: "44px", lg:"52px"},
+            fontSize: { xs: "28px", sm: "36px", md: "44px", lg: "52px" },
           }}
         >
           En NF te ofrecemos los mejores servicios
@@ -95,7 +98,7 @@ export default function Services() {
           variant="body1"
           sx={{
             fontFamily: "Exo, sans-serif",
-            color: "#f5f5f5",
+            color: textColor, // Negro en claro, blanco en oscuro
             marginBottom: "28px",
             fontWeight: 300,
           }}

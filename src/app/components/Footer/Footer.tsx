@@ -1,8 +1,13 @@
 "use client";
-import { Box, Typography, Grid, Link } from "@mui/material";
+import React from "react";
+import { Box, Typography, Grid, Link, useTheme } from "@mui/material";
 import { HoverText } from "../hoverText/hoverText";
 
 export default function Footer() {
+  const theme = useTheme();
+  const primaryColor = theme.palette.mode === "light" ? "#00A8C1" : "#FFC300"; // Azul en claro, amarillo en oscuro
+  const textColor = theme.palette.mode === "light" ? "#000000" : "#f5f5f5"; // Negro en claro, blanco en oscuro
+
   const emails = [
     { label: "Recursos Humanos", email: "rh@neural-factory.com" },
     { label: "Finanzas y Contabilidad", email: "finanzas@neural-factory.com" },
@@ -25,7 +30,7 @@ export default function Footer() {
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "space-between",
-        color: "#f5f5f5",
+        color: textColor,
         fontFamily: "Exo, sans-serif",
         gap: "40px",
         width: "100%",
@@ -52,8 +57,8 @@ export default function Footer() {
           sx={{
             fontFamily: "Exo, sans-serif",
             fontWeight: 700,
-            fontSize: { xs: "20px", sm:"33px", md: "50px", lg:"70px"},
-            color: "#f5f5f5",
+            fontSize: { xs: "20px", sm: "33px", md: "50px", lg: "70px" },
+            color: textColor,
             whiteSpace: "nowrap",
           }}
         >
@@ -62,11 +67,11 @@ export default function Footer() {
         <Typography
           component="span"
           sx={{
-            color: "#FFC300",
-            fontSize: { xs: "20px", sm:"33px", md: "50px", lg:"70px"},
+            color: primaryColor,
+            fontSize: { xs: "20px", sm: "33px", md: "50px", lg: "70px" },
             fontWeight: 700,
-            marginLeft: { xs: "2px", sm:"4px", md: "6px", lg:"8px"},
-            marginRight: { xs: "2px", sm:"4px", md: "6px", lg:"8px"},
+            marginLeft: { xs: "2px", sm: "4px", md: "6px", lg: "8px" },
+            marginRight: { xs: "2px", sm: "4px", md: "6px", lg: "8px" },
           }}
         >
           @
@@ -76,8 +81,8 @@ export default function Footer() {
           sx={{
             fontFamily: "Exo, sans-serif",
             fontWeight: 700,
-            fontSize: { xs: "20px", sm:"33px", md: "50px", lg:"70px"},
-            color: "#f5f5f5",
+            fontSize: { xs: "20px", sm: "33px", md: "50px", lg: "70px" },
+            color: textColor,
             whiteSpace: "nowrap",
           }}
         >
@@ -99,14 +104,14 @@ export default function Footer() {
         }}
       >
         {emails.map((item, index) => (
-          <Grid item xs={12} sm={6} md={4} key={index} sx={{textAlign: "center", mb: 4}}>
+          <Grid item xs={12} sm={6} md={4} key={index} sx={{ textAlign: "center", mb: 4 }}>
             <Typography
               variant="h6"
               sx={{
                 fontFamily: "Exo, sans-serif",
                 fontWeight: 700,
                 fontSize: { xs: "16px", md: "20px" },
-                color: "#f5f5f5",
+                color: textColor,
                 textAlign: "center",
               }}
             >
@@ -119,7 +124,7 @@ export default function Footer() {
                 fontFamily: "Exo, sans-serif",
                 fontWeight: 700,
                 fontSize: { xs: "16px", md: "18px" },
-                color: "#FFC300",
+                color: primaryColor,
                 textDecoration: "none",
                 textAlign: "center",
                 "&:hover": {

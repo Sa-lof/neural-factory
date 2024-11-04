@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { Typography, Box, Avatar, Button } from "@mui/material";
+import { Typography, Box, Avatar, Button, useTheme } from "@mui/material";
 
 let interval: NodeJS.Timeout;
 
@@ -22,7 +22,11 @@ export const CardStack = ({
   offset?: number;
   scaleFactor?: number;
 }) => {
-  const CARD_OFFSET = offset || 20; 
+  const theme = useTheme();
+  const primaryColor = theme.palette.mode === "light" ? "#00A8C1" : "#FFC300"; // Azul en claro, amarillo en oscuro
+  const textColor = theme.palette.mode === "light" ? "#000000" : "#f5f5f5"; // Negro en claro, blanco en oscuro
+
+  const CARD_OFFSET = offset || 20;
   const SCALE_FACTOR = scaleFactor || 0.05;
   const [cards, setCards] = useState<Card[]>(items);
 
@@ -43,14 +47,15 @@ export const CardStack = ({
 
   return (
     <Box
-      className="relative w-full max-w-5xl" 
-      sx={{ fontFamily: "Exo, sans-serif", paddingBottom:4}}
+      className="relative w-full max-w-5xl"
+      sx={{ fontFamily: "Exo, sans-serif", paddingBottom: 4 }}
     >
       {cards.map((card, index) => (
         <motion.div
           key={card.id}
-          className="absolute bg-[#FFC300] h-96 w-full max-w-5xl rounded-xl p-2 shadow-lg flex flex-row items-center space-x-3"
+          className="absolute h-96 w-full max-w-5xl rounded-xl p-2 shadow-lg flex flex-row items-center space-x-3"
           style={{
+            backgroundColor: primaryColor,
             transformOrigin: "top center",
             borderRadius: "16px",
           }}
@@ -64,21 +69,21 @@ export const CardStack = ({
             alt={`${card.name}'s avatar`}
             src={card.avatar}
             sx={{
-              width:{ xs:90, sm:160, md:180, lg:200},
-              height:{ xs:90, sm:160, md:180, lg:200},
-              backgroundColor: "#0D0D0D",
+              width: { xs: 90, sm: 160, md: 180, lg: 200 },
+              height: { xs: 90, sm: 160, md: 180, lg: 200 },
+              backgroundColor: textColor,
               marginRight: 0,
-              marginLeft:{ xs:1, sm:4, md:6, lg:8},
+              marginLeft: { xs: 1, sm: 4, md: 6, lg: 8 },
             }}
           />
-          <Box sx={{ textAlign: "left", color: "#0D0D0D", maxWidth: "80%" }}>
+          <Box sx={{ textAlign: "left", color: textColor, maxWidth: "80%" }}>
             <Typography
               variant="h5"
               sx={{
                 fontWeight: 700,
                 mb: 2,
                 fontFamily: "Exo, sans-serif",
-                fontSize: { xs: "1rem", sm:"1.4rem", md: "1.8rem", lg:"2.1rem"},
+                fontSize: { xs: "1rem", sm: "1.4rem", md: "1.8rem", lg: "2.1rem" },
               }}
             >
               ¡Hola yo soy {card.name}!
@@ -86,10 +91,10 @@ export const CardStack = ({
             <Typography
               variant="body1"
               sx={{
-                fontSize: { xs: "0.82rem", sm:"1.1rem", md: "1.2rem", lg:"1.3rem"},
+                fontSize: { xs: "0.82rem", sm: "1.1rem", md: "1.2rem", lg: "1.3rem" },
                 mb: 4,
                 fontFamily: "Exo, sans-serif",
-                color: "#0D0D0D",
+                color: textColor,
                 fontWeight: 300,
                 lineHeight: "1.6",
               }}
@@ -101,11 +106,11 @@ export const CardStack = ({
               color="primary"
               sx={{
                 fontWeight: 500,
-                fontSize: { xs: "0.8rem", sm:"1rem", md: "1.3rem", lg:"1.5rem"},
+                fontSize: { xs: "0.8rem", sm: "1rem", md: "1.3rem", lg: "1.5rem" },
                 fontFamily: "Exo, sans-serif",
                 textTransform: "none",
-                backgroundColor: "#FFC300",
-                color: "#0D0D0D",
+                backgroundColor: primaryColor,
+                color: textColor,
                 "&:hover": {
                   color: "#f5f5f5",
                 },

@@ -1,8 +1,8 @@
 "use client";
 import { CardStack } from "../ui/card-stack";
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, useTheme } from "@mui/material";
 
-// Small utility to highlight the content of specific section of a testimonial content
+// Small utility to highlight the content of a specific section of testimonial content
 const CARDS = [
   {
     id: 0,
@@ -51,6 +51,9 @@ const CARDS = [
 ];
 
 export function CardStackDemo() {
+  const theme = useTheme();
+  const titleColor = theme.palette.mode === "light" ? "#000000" : "#f5f5f5"; // Negro en claro, blanco en oscuro
+
   return (
     <Box
       sx={{
@@ -71,7 +74,7 @@ export function CardStackDemo() {
         gutterBottom
         sx={{
           fontFamily: "Exo, sans-serif",
-          color: "#f5f5f5",
+          color: titleColor, // Dinámico según el modo
           fontWeight: 700,
           fontSize: { xs: "28px", sm: "36px", md: "44px", lg: "52px" },
           marginBottom: 8,

@@ -1,5 +1,6 @@
 "use client";
-import { Box, Typography, Grid } from "@mui/material";
+import React from "react";
+import { Box, Typography, Grid, useTheme } from "@mui/material";
 import banca from "../../assets/industries/banca.png";
 import educacion from "../../assets/industries/education.jpg";
 import energias from "../../assets/industries/energias.png";
@@ -17,6 +18,9 @@ interface IndustryCardProps {
 }
 
 const IndustryCard = ({ title, imageUrl }: IndustryCardProps) => {
+  const theme = useTheme();
+  const titleColor = theme.palette.mode === "light" ? "#00A8C1" : "#FFC300"; // Azul en claro, amarillo en oscuro
+
   return (
     <Box
       sx={{
@@ -25,12 +29,12 @@ const IndustryCard = ({ title, imageUrl }: IndustryCardProps) => {
         backgroundSize: "cover",
         backgroundPosition: "center",
         borderRadius: "16px",
-        height: "200px", // Altura fija para que todas las tarjetas sean visibles
+        height: "200px",
         width: "100%",
-        overflow: "hidden", // Asegura que los bordes no se salgan
+        overflow: "hidden",
         transition: "transform 0.3s ease-in-out",
         "&:hover": {
-          transform: "scale(1.05)", // Efecto de zoom al hacer hover
+          transform: "scale(1.05)",
         },
       }}
     >
@@ -46,16 +50,16 @@ const IndustryCard = ({ title, imageUrl }: IndustryCardProps) => {
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
-          opacity: 0, // Oculto por defecto
-          transition: "opacity 0.3s ease-in-out", // Transición suave
+          opacity: 0,
+          transition: "opacity 0.3s ease-in-out",
           "&:hover": {
-            opacity: 1, // Aparece en hover
+            opacity: 1,
           },
         }}
       >
         <Typography
           sx={{
-            color: "#FFC300", // Color amarillo para el título
+            color: titleColor, // Cambia de color dinámicamente
             fontFamily: "Exo, sans-serif",
             fontWeight: "bold",
             fontSize: "24px",
@@ -70,47 +74,20 @@ const IndustryCard = ({ title, imageUrl }: IndustryCardProps) => {
 };
 
 export default function Industries() {
+  const theme = useTheme();
+  const textColor = theme.palette.mode === "light" ? "#000000" : "#f5f5f5"; // Negro en claro, blanco en oscuro
+
   const industryCards = [
-    {
-      title: "Banca",
-      imageUrl: banca.src,
-    },
-    {
-      title: "Educación",
-      imageUrl: educacion.src,
-    },
-    {
-      title: "Energías",
-      imageUrl: energias.src,
-    },
-    {
-      title: "Gobierno",
-      imageUrl: gobierno.src,
-    },
-    {
-      title: "Logística",
-      imageUrl: logistics.src,
-    },
-    {
-      title: "Manufactura",
-      imageUrl: manufactura.src,
-    },
-    {
-      title: "Retail",
-      imageUrl: retail.src,
-    },
-    {
-      title: "Salud",
-      imageUrl: salud.src,
-    },
-    {
-      title: "Seguros",
-      imageUrl: seguros.src,
-    },
-    {
-      title: "Telecomunicaciones",
-      imageUrl: telecom.src,
-    },
+    { title: "Banca", imageUrl: banca.src },
+    { title: "Educación", imageUrl: educacion.src },
+    { title: "Energías", imageUrl: energias.src },
+    { title: "Gobierno", imageUrl: gobierno.src },
+    { title: "Logística", imageUrl: logistics.src },
+    { title: "Manufactura", imageUrl: manufactura.src },
+    { title: "Retail", imageUrl: retail.src },
+    { title: "Salud", imageUrl: salud.src },
+    { title: "Seguros", imageUrl: seguros.src },
+    { title: "Telecomunicaciones", imageUrl: telecom.src },
   ];
 
   return (
@@ -121,8 +98,8 @@ export default function Industries() {
         alignItems: "center",
         justifyContent: "center",
         paddingTop: 4,
-        minHeight: { xs: '100vh', md: 'auto' }, // Altura mínima en pantallas pequeñas
-        mt: { xs: 0, md: 8 }, // Ajuste de margen para pantallas pequeñas
+        minHeight: { xs: '100vh', md: 'auto' },
+        mt: { xs: 0, md: 8 },
       }}
     >
       {/* Título de la sección */}
@@ -130,12 +107,12 @@ export default function Industries() {
         variant="h5"
         sx={{
           fontFamily: "Exo, sans-serif",
-          color: "#f5f5f5",
+          color: textColor, // Cambia de color dinámicamente
           fontWeight: 500,
-          fontSize: { xs: "28px", sm:"36px", md: "44px", lg:"52px"},
+          fontSize: { xs: "28px", sm: "36px", md: "44px", lg: "52px" },
           textAlign: "center",
           marginBottom: 12,
-          marginTop:{ xs: 10, sm:9, md:0, lg:0},
+          marginTop: { xs: 10, sm: 9, md: 0, lg: 0 },
         }}
       >
         Hemos trabajado con clientes de diversas industrias, ayudando a optimizar su logística, marketing y operaciones.
@@ -145,8 +122,8 @@ export default function Industries() {
       <Grid container spacing={2} sx={{ maxWidth: "1200px", width: "100%" }}>
         {industryCards.map((card, index) => {
           const isLastItem = index === industryCards.length - 1;
-          const itemsInLastRow = industryCards.length % 3; // Para pantallas grandes, cada fila tiene 3 elementos (md=4)
-          const centerLastItem = isLastItem && itemsInLastRow === 1; // Centrar si la última fila tiene 1 solo elemento
+          const itemsInLastRow = industryCards.length % 3;
+          const centerLastItem = isLastItem && itemsInLastRow === 1;
 
           return (
             <Grid

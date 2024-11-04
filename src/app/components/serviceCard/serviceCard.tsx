@@ -1,10 +1,10 @@
 "use client";
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, useTheme } from "@mui/material";
 
 interface ServiceCardProps {
   title: string;
   description: string;
-  imageUrl?: string; // Optional if you want to add an image in the future
+  imageUrl?: string;
 }
 
 export default function ServiceCard({
@@ -12,10 +12,15 @@ export default function ServiceCard({
   description,
   imageUrl,
 }: ServiceCardProps) {
+  const theme = useTheme();
+  const primaryColor = theme.palette.mode === "light" ? "#00A8C1" : "#FFC300"; // Azul en modo claro, amarillo en oscuro
+  const textColor = theme.palette.mode === "light" ? "#000000" : "#f5f5f5"; // Negro en claro, blanco en oscuro
+  const borderColor = theme.palette.mode === "light" ? "#000000" : "#f5f5f5"; // Negro en modo claro, blanco en oscuro
+
   return (
     <Box
       sx={{
-        border: "1px solid #f5f5f5",
+        border: `1px solid ${borderColor}`,
         borderRadius: "10px",
         padding: "16px",
         marginBottom: "16px",
@@ -29,11 +34,10 @@ export default function ServiceCard({
       {/* Image Container (optional) */}
       <Box
         component="img"
-        src={imageUrl || "https://via.placeholder.com/150x50"} // Fallback to placeholder if no imageUrl is provided
+        src={imageUrl || "https://via.placeholder.com/150x50"}
         alt={title}
         sx={{
           width: "100%",
-
           borderRadius: "8px",
           objectFit: "cover",
           marginBottom: "16px",
@@ -45,9 +49,9 @@ export default function ServiceCard({
         sx={{
           fontFamily: "Exo, sans-serif",
           fontWeight: 700,
-          color: "#FFC300",
+          color: primaryColor, // Cambia a azul en modo claro, amarillo en oscuro
           marginBottom: "8px",
-          fontSize: { xs: "1.2rem", sm:"1.3rem", md: "1.4rem", lg:"1.5rem"},
+          fontSize: { xs: "1.2rem", sm: "1.3rem", md: "1.4rem", lg: "1.5rem" },
         }}
       >
         {title}
@@ -57,8 +61,8 @@ export default function ServiceCard({
         variant="body1"
         sx={{
           fontFamily: "Exo, sans-serif",
-          color: "#f5f5f5",
-          fontSize: { xs: "0.8rem", sm:"0.9rem", md: "1.0rem", lg:"1.1rem"},
+          color: textColor, // Cambia a negro en modo claro, blanco en oscuro
+          fontSize: { xs: "0.8rem", sm: "0.9rem", md: "1.0rem", lg: "1.1rem" },
           fontWeight: 300,
         }}
       >
