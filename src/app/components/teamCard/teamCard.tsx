@@ -8,13 +8,13 @@ const CARDS = [
     id: 0,
     name: "Daniel Núñez (Científico de Datos)",
     avatar: "/assets/presentation/Daniel.jpg",
-    socialLink: "#",
+    socialLink: "https://www.linkedin.com/in/danielnunez10",
     content: (
       <>
-        Daniel es científico de datos con experiencia en IA, big data y
-        ciberseguridad. Ha desarrollado sistemas IoT seguros y modelos
-        predictivos. Se actualiza con certificaciones y metodologías ágiles para
-        resolver desafíos empresariales con soluciones basadas en datos.
+        Ingeniero en Ciencia de Datos con Maestría en IA, especializado en ML,
+        Big Data y optimización, y experto en herramientas como Azure, SQL y
+        Python. Enfocado en soluciones tecnológicas que optimicen procesos y
+        generen valor.
       </>
     ),
   },
@@ -22,7 +22,8 @@ const CARDS = [
     id: 1,
     name: "Ricardo López",
     avatar: "/assets/presentation/Richi.jpeg",
-    socialLink: "#",
+    socialLink:
+      "https://www.linkedin.com/in/ricardo-lopez-cruz-01a125221?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
     content: (
       <>
         Científico de Datos con formación en Nanotecnología y Ciencia de Datos,
@@ -37,7 +38,8 @@ const CARDS = [
     id: 2,
     name: "Efraín",
     avatar: "/assets/presentation/Efrain.jpg",
-    socialLink: "#",
+    socialLink:
+      "https://www.linkedin.com/in/efra%C3%ADn-l%C3%B3pez-2384632a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
     content: (
       <>
         Actuario por la UNAM con estudios en Modelación Matemática,
