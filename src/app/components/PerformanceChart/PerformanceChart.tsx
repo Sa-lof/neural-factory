@@ -10,14 +10,15 @@ import {
   LabelList,
 } from "recharts";
 import { useTheme } from "@mui/material";
+import megaladata from "../../assets/graphs/megaladata.png";
 
-// Define el tipo para cada elemento de datos
 interface DataItem {
   name: string;
   time: number;
   color: string;
   lightColor: string;
   comparison: string;
+  image?: string;
 }
 
 const data: DataItem[] = [
@@ -27,6 +28,7 @@ const data: DataItem[] = [
     color: "#FFC300",
     lightColor: "#00A8C1",
     comparison: "LOWER IS FASTER",
+    image: megaladata.src,
   },
   {
     name: "RAPIDMINER",
@@ -58,14 +60,12 @@ const data: DataItem[] = [
   },
 ];
 
-// Define el tipo para el payload de Tooltip
 interface CustomTooltipProps {
   payload: {
     payload: DataItem;
   }[];
 }
 
-// Componente Tooltip personalizado con tipo para payload
 const CustomTooltip: React.FC<CustomTooltipProps> = ({ payload }) => {
   const theme = useTheme();
   const backgroundColor = theme.palette.mode === "light" ? "#00A8C1" : "#FFC300";
@@ -114,7 +114,26 @@ const PerformanceChart: React.FC = () => {
           <YAxis
             type="category"
             dataKey="name"
-            tick={{ fill: labelColor, fontSize: 14 }}
+            tick={({ x, y, payload, visibleTicksCount }) => {
+              const item = data.find(d => d.name === payload.value);
+              
+              // Ajusta el tamaño de la imagen en función del ancho de la ventana
+              const imageSize = Math.min(135, window.innerWidth / 3); // Ajusta el factor según sea necesario
+              const xOffset = -imageSize * 1; // Posición horizontal ajustada en función del tamaño
+              const yOffset = -imageSize / 2; // Posición vertical ajustada en función del tamaño
+
+              return (
+                <g transform={`translate(${x},${y})`}>
+                  {item?.image ? (
+                    <image x={xOffset} y={yOffset} width={imageSize} height={imageSize} xlinkHref={item.image} />
+                  ) : (
+                    <text x={-10} y={5} dy={0} fill={labelColor} fontSize="14" textAnchor="end">
+                      {payload.value}
+                    </text>
+                  )}
+                </g>
+              );
+            }}
           />
           <Tooltip content={<CustomTooltip payload={[]} />} cursor={{ fill: "transparent" }} />
           <Bar dataKey="time" isAnimationActive animationDuration={800}>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import {
   BarChart,
   Bar,
@@ -10,14 +10,15 @@ import {
   LabelList,
 } from "recharts";
 import { useTheme } from "@mui/material";
+import megaladata from "../../assets/graphs/megaladata.png";
 
-// Define the type for each data item
 interface DataItem {
   name: string;
   time: number | null;
   color: string;
   lightColor: string;
   comparison: string;
+  image?: string;
 }
 
 const data: DataItem[] = [
@@ -27,6 +28,7 @@ const data: DataItem[] = [
     color: "#FFC300",
     lightColor: "#00A8C1",
     comparison: "",
+    image: megaladata.src,
   },
   {
     name: "RAPIDMINER",
@@ -58,14 +60,12 @@ const data: DataItem[] = [
   },
 ];
 
-// Define the type for the Tooltip payload
 interface CustomTooltipProps {
   payload: {
     payload: DataItem;
   }[];
 }
 
-// Custom Tooltip component with typed payload
 const CustomTooltip: React.FC<CustomTooltipProps> = ({ payload }) => {
   const theme = useTheme();
   const backgroundColor = theme.palette.mode === "light" ? "#00A8C1" : "#FFC300";
@@ -94,6 +94,22 @@ const PerformanceChartLargeDataset: React.FC = () => {
   const theme = useTheme();
   const labelColor = theme.palette.mode === "light" ? "#000000" : "#f5f5f5";
 
+  // Hook para manejar el tamaño de la imagen
+  const [imageSize, setImageSize] = useState(100);
+
+  useEffect(() => {
+    const handleResize = () => {
+      const newSize = Math.min(135, window.innerWidth / 3); // Ajusta el factor según sea necesario
+      setImageSize(newSize);
+    };
+
+    // Configura el tamaño inicial y agrega el evento de redimensionamiento
+    handleResize();
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <div style={{ width: "100%", maxWidth: "1000px", margin: "auto", position: "relative", paddingRight: 34 }}>
       <h3 style={{ color: labelColor, textAlign: "center", fontSize: "24px" }}>
@@ -114,7 +130,23 @@ const PerformanceChartLargeDataset: React.FC = () => {
           <YAxis
             type="category"
             dataKey="name"
-            tick={{ fill: labelColor, fontSize: 14 }}
+            tick={({ x, y, payload }) => {
+              const item = data.find(d => d.name === payload.value);
+              const xOffset = -imageSize * 1; // Posición horizontal ajustada en función del tamaño
+              const yOffset = -imageSize / 2; // Posición vertical ajustada en función del tamaño
+
+              return (
+                <g transform={`translate(${x},${y})`}>
+                  {item?.image ? (
+                    <image x={xOffset} y={yOffset} width={imageSize} height={imageSize} xlinkHref={item.image} />
+                  ) : (
+                    <text x={-10} y={5} dy={0} fill={labelColor} fontSize="14" textAnchor="end">
+                      {payload.value}
+                    </text>
+                  )}
+                </g>
+              );
+            }}
           />
           <Tooltip content={<CustomTooltip payload={[]} />} cursor={{ fill: "transparent" }} />
           <Bar dataKey="time" isAnimationActive animationDuration={800}>
