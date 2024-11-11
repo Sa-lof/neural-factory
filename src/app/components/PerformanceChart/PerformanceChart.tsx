@@ -114,7 +114,7 @@ const PerformanceChart: React.FC = () => {
           <YAxis
             type="category"
             dataKey="name"
-            tick={({ x, y, payload, visibleTicksCount }) => {
+            tick={({ x, y, payload }) => {
               const item = data.find(d => d.name === payload.value);
               
               // Ajusta el tamaño de la imagen en función del ancho de la ventana
