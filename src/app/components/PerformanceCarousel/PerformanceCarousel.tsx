@@ -19,14 +19,14 @@ const PerformanceCarousel: React.FC = () => {
   const activeColor = theme.palette.mode === "light" ? "#00A8C1" : "#FFC300"; // Azul en claro, amarillo en oscuro
   const inactiveColor = theme.palette.mode === "light" ? "gray" : "#f5f5f5"; // Gris en claro, blanco en oscuro
 
-  const handleNext = () => setActiveStep((prevStep) => (prevStep + 1) % maxSteps);
+  const handleNext = () => setActiveStep((prevStep) => (prevStep + 1) % maxSteps); //eslint-disable-line
 
   const handleStepChange = (step: number) => setActiveStep(step);
 
   useEffect(() => {
     const interval = setInterval(() => {
       handleNext();
-    }, 5000);
+    }, 8000);
 
     return () => clearInterval(interval);
   }, [handleNext]);

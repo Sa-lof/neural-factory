@@ -9,15 +9,15 @@ export default function Footer() {
   const textColor = theme.palette.mode === "light" ? "#000000" : "#f5f5f5"; // Negro en claro, blanco en oscuro
 
   const emails = [
-    { label: "Recursos Humanos", email: "rh@neural-factory.com" },
-    { label: "Finanzas y Contabilidad", email: "finanzas@neural-factory.com" },
-    { label: "Desarrollo de Negocios", email: "negocios@neural-factory.com" },
-    { label: "Marketing", email: "marketing@neural-factory.com" },
-    { label: "Ventas", email: "ventas@neural-factory.com" },
-    { label: "Investigación y Desarrollo (I+D)", email: "investigacion@neural-factory.com" },
-    { label: "Tecnología e Innovación", email: "tecnologia@neural-factory.com" },
-    { label: "Atención al Cliente", email: "atencion.cliente@neural-factory.com" },
-    { label: "Desarrollo de Proyectos IA/ML", email: "proyectos@neural-factory.com" },
+    // { label: "Recursos Humanos", email: "rh@neural-factory.com" },
+    // { label: "Finanzas y Contabilidad", email: "finanzas@neural-factory.com" },
+    // { label: "Desarrollo de Negocios", email: "negocios@neural-factory.com" },
+    // { label: "Marketing", email: "marketing@neural-factory.com" },
+    // { label: "Ventas", email: "ventas@neural-factory.com" },
+    // { label: "Investigación y Desarrollo (I+D)", email: "investigacion@neural-factory.com" },
+    // { label: "Tecnología e Innovación", email: "tecnologia@neural-factory.com" },
+    // { label: "Atención al Cliente", email: "atencion.cliente@neural-factory.com" },
+    // { label: "Desarrollo de Proyectos IA/ML", email: "proyectos@neural-factory.com" },
     { label: "Ricardo López", email: "ricardo.lopez@neural-factory.com" },
     { label: "Daniel Núñez", email: "daniel.nunez@neural-factory.com" },
     { label: "Efraín Pantoja", email: "efrain.pantoja@neural-factory.com" },
@@ -89,7 +89,6 @@ export default function Footer() {
           neural-factory.com
         </Typography>
       </Box>
-
       {/* Email Grid Section in 3 Columns */}
       <Grid
         container
@@ -104,13 +103,20 @@ export default function Footer() {
         }}
       >
         {emails.map((item, index) => (
-          <Grid item xs={12} sm={6} md={4} key={index} sx={{ textAlign: "center", mb: 4 }}>
+          <Grid
+            item
+            xs={12}
+            sm={6}
+            md={4}
+            key={index}
+            sx={{ textAlign: "center" }}
+          >
             <Typography
               variant="h6"
               sx={{
                 fontFamily: "Exo, sans-serif",
                 fontWeight: 700,
-                fontSize: { xs: "16px", md: "20px" },
+                fontSize: { xs: "16px", md: "32px" },
                 color: textColor,
                 textAlign: "center",
               }}
@@ -123,7 +129,7 @@ export default function Footer() {
               sx={{
                 fontFamily: "Exo, sans-serif",
                 fontWeight: 700,
-                fontSize: { xs: "16px", md: "18px" },
+                fontSize: { xs: "16px", md: "20px" },
                 color: primaryColor,
                 textDecoration: "none",
                 textAlign: "center",
@@ -137,9 +143,30 @@ export default function Footer() {
           </Grid>
         ))}
       </Grid>
-
       {/* Large Title Neural Factory */}
       <HoverText text="neural factory" />
+      <Typography
+        sx={{
+          color: textColor,
+          textAlign: "center",
+          fontSize: { xs: "8px", md: "12px" },
+          marginBottom: 2
+        }}
+      >
+        Todos los derechos reservados &copy; 2024 |{" "}
+        <Link
+          href="https://www.amoxtli.tech"
+          target="_blank"
+          rel="noreferrer"
+          sx={{
+            color: textColor,
+            textDecoration: "none",
+            "&:hover": { color: primaryColor },
+          }}
+        >
+          Desarrollado por Amoxtli Web Developers
+        </Link>
+      </Typography>
     </Box>
   );
 }

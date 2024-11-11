@@ -13,23 +13,24 @@ export const HoverText = ({ text }: { text: string }) => {
       initial="rest"
       whileHover="hover"
       animate="rest"
-      className="flex justify-center items-center w-full h-[20vh] sm:pt-[10vh] lg:pt-[40vh] pb-[5vh]"
+      className="flex justify-center items-center"
     >
       <motion.h1
-        className="font-bold relative text-[10vw] sm:text-[120px] lg:text-[240px]"
+        className="font-bold text-[80px] sm:text-[120px] lg:text-[240px]" // Removed the lg class for testing
         style={{
           color: "transparent",
-          WebkitTextStroke: `2px ${strokeColor}`, // Color del contorno dinámico
+          fontSize: "200px", // Explicitly set for troubleshooting
+          WebkitTextStroke: `2px ${strokeColor}`, // Dynamic stroke color
         }}
         variants={{
           rest: {
-            WebkitTextFillColor: "transparent", // Mantiene el relleno transparente inicialmente
+            WebkitTextFillColor: "transparent", // Keeps the fill transparent initially
           },
           hover: {
-            WebkitTextFillColor: fillColorHover, // Cambia el relleno en hover
+            WebkitTextFillColor: fillColorHover, // Changes fill on hover
             transition: {
-              duration: 2.5, // Duración de la animación
-              ease: [0.25, 0.1, 0.25, 1], // Easing suave
+              duration: 2.5, // Animation duration
+              ease: [0.25, 0.1, 0.25, 1], // Smooth easing
             },
           },
         }}
