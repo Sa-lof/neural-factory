@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { Box, Fade, IconButton, useTheme } from "@mui/material";
+import { Box, Fade, IconButton, Typography, useTheme } from "@mui/material";
 import CircleIcon from "@mui/icons-material/Circle"; // Importa un ícono circular para los indicadores
 import PerformanceChart from "../PerformanceChart/PerformanceChart";
 import PerformanceChartLargeDataset from "../PerformanceChartLargeDataset/PerformanceChartLargeDataset";
 import PerformanceChartLastDataset from "../PerformanceChartLastDataset/PerformanceChartLastDataset";
+import megaladata from "../../assets/graphs/megaladata.png";
+import Image from "next/image";
 
 const charts = [
   { component: <PerformanceChart /> },
@@ -19,7 +21,8 @@ const PerformanceCarousel: React.FC = () => {
   const activeColor = theme.palette.mode === "light" ? "#00A8C1" : "#FFC300"; // Azul en claro, amarillo en oscuro
   const inactiveColor = theme.palette.mode === "light" ? "gray" : "#f5f5f5"; // Gris en claro, blanco en oscuro
 
-  const handleNext = () => setActiveStep((prevStep) => (prevStep + 1) % maxSteps); //eslint-disable-line
+  const handleNext = () =>
+    setActiveStep((prevStep) => (prevStep + 1) % maxSteps); //eslint-disable-line
 
   const handleStepChange = (step: number) => setActiveStep(step);
 
@@ -42,6 +45,23 @@ const PerformanceCarousel: React.FC = () => {
         paddingBottom: 15,
       }}
     >
+      <Typography variant="h5" component="h2" gutterBottom>
+        En nuestras soluciones, utilizamos el software de mejor
+        <Box
+          component="span"
+          sx={{ display: "inline-flex", alignItems: "center" }}
+        >
+          rendimiento
+          <Image
+            src={megaladata.src}
+            alt="Megaladata"
+            width={100}
+            height={200}
+          />
+        </Box>
+      </Typography>
+
+      {/* Contenedor de los gráficos */}
       {charts.map((chart, index) => (
         <Fade key={index} in={index === activeStep} timeout={600}>
           <Box

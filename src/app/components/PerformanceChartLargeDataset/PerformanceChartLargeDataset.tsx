@@ -112,9 +112,9 @@ const PerformanceChartLargeDataset: React.FC = () => {
 
   return (
     <div style={{ width: "100%", maxWidth: "1000px", margin: "auto", position: "relative", paddingRight: 34 }}>
-      <h3 style={{ color: labelColor, textAlign: "center", fontSize: "24px" }}>
+      <h6 style={{ color: labelColor, textAlign: "center", fontSize: "16px" }}>
         Desempeño con 14.5 gB
-      </h3>
+      </h6>
       <ResponsiveContainer width="100%" height={400}>
         <BarChart
           data={data.map((item) => ({ ...item, time: item.time ?? 0 }))}

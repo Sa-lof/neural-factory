@@ -62,7 +62,7 @@ export default function Footer() {
             whiteSpace: "nowrap",
           }}
         >
-          direccion.general
+          info
         </Typography>
         <Typography
           component="span"
