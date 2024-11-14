@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { Box, Fade, IconButton, Typography, useTheme } from "@mui/material";
-import CircleIcon from "@mui/icons-material/Circle"; // Importa un ícono circular para los indicadores
+import CircleIcon from "@mui/icons-material/Circle";
 import PerformanceChart from "../PerformanceChart/PerformanceChart";
 import PerformanceChartLargeDataset from "../PerformanceChartLargeDataset/PerformanceChartLargeDataset";
 import PerformanceChartLastDataset from "../PerformanceChartLastDataset/PerformanceChartLastDataset";
+import megaladata from "../../assets/graphs/megaladata.png";
 import mega from "../../assets/graphs/mega.png";
 import Image from "next/image";
 
@@ -18,11 +19,11 @@ const PerformanceCarousel: React.FC = () => {
   const maxSteps = charts.length;
   const theme = useTheme();
 
-  const activeColor = theme.palette.mode === "light" ? "#00A8C1" : "#FFC300"; // Azul en claro, amarillo en oscuro
-  const inactiveColor = theme.palette.mode === "light" ? "gray" : "#f5f5f5"; // Gris en claro, blanco en oscuro
+  const activeColor = theme.palette.mode === "light" ? "#00A8C1" : "#FFC300";
+  const inactiveColor = theme.palette.mode === "light" ? "gray" : "#f5f5f5";
 
   const handleNext = () =>
-    setActiveStep((prevStep) => (prevStep + 1) % maxSteps); //eslint-disable-line
+    setActiveStep((prevStep) => (prevStep + 1) % maxSteps);
 
   const handleStepChange = (step: number) => setActiveStep(step);
 
@@ -53,16 +54,15 @@ const PerformanceCarousel: React.FC = () => {
         >
           rendimiento
           <Image
-            src={mega.src}
+            src={theme.palette.mode === "light" ? megaladata.src : mega.src}
             alt="Megaladata"
-            width={200}
+            width={theme.palette.mode === "light" ? 250 : 200}
             height={500}
-            style={{ marginLeft: 10 }}
+            style={{ marginLeft: theme.palette.mode === "light" ? 0 : 10 }}
           />
         </Box>
       </Typography>
 
-      {/* Contenedor de los gráficos */}
       {charts.map((chart, index) => (
         <Fade key={index} in={index === activeStep} timeout={600}>
           <Box
@@ -78,7 +78,6 @@ const PerformanceCarousel: React.FC = () => {
         </Fade>
       ))}
 
-      {/* Indicadores de navegación en círculo */}
       <Box
         sx={{
           display: "flex",
