@@ -57,7 +57,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           href="https://fonts.googleapis.com/css2?family=Exo:wght@100;200;300;400;500;600;700;800;900&display=swap"
           rel="stylesheet"
         /> 
-        <link rel="icon" href="/favicon.jpg" type="image/jpeg" />
+        <link rel="icon" href="/favicon.png" type="image/png" />
         <meta name="description" content={metadata.description} />
         <meta name="keywords" content={metadata.keywords.join(", ")} />
         <meta property="og:title" content={metadata.openGraph.title} />
