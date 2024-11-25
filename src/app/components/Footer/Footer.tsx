@@ -32,11 +32,11 @@ export default function Footer() {
         justifyContent: "space-between",
         color: textColor,
         fontFamily: "Exo, sans-serif",
-        gap: "40px",
+        gap: "20px",
         width: "100%",
-        paddingRight: "40px",
-        paddingLeft: "40px",
-        height: "100vh",
+        paddingRight: "20px",
+        paddingLeft: "20px",
+        height: {xs: "60vh", md: "100vh"},
         boxSizing: "border-box",
         paddingTop: 4,
       }}
@@ -49,7 +49,6 @@ export default function Footer() {
           alignItems: "center",
           width: "100%",
           textAlign: "center",
-          flexGrow: 1,
         }}
       >
         <Typography
@@ -57,7 +56,7 @@ export default function Footer() {
           sx={{
             fontFamily: "Exo, sans-serif",
             fontWeight: 700,
-            fontSize: { xs: "20px", sm: "33px", md: "50px", lg: "70px" },
+            fontSize: { xs: "30px", sm: "33px", md: "50px", lg: "70px" },
             color: textColor,
             whiteSpace: "nowrap",
           }}
@@ -68,7 +67,7 @@ export default function Footer() {
           component="span"
           sx={{
             color: primaryColor,
-            fontSize: { xs: "20px", sm: "33px", md: "50px", lg: "70px" },
+            fontSize: { xs: "30px", sm: "33px", md: "50px", lg: "70px" },
             fontWeight: 700,
             marginLeft: { xs: "2px", sm: "4px", md: "6px", lg: "8px" },
             marginRight: { xs: "2px", sm: "4px", md: "6px", lg: "8px" },
@@ -81,7 +80,7 @@ export default function Footer() {
           sx={{
             fontFamily: "Exo, sans-serif",
             fontWeight: 700,
-            fontSize: { xs: "20px", sm: "33px", md: "50px", lg: "70px" },
+            fontSize: { xs: "30px", sm: "33px", md: "50px", lg: "70px" },
             color: textColor,
             whiteSpace: "nowrap",
           }}
@@ -99,7 +98,6 @@ export default function Footer() {
           paddingBottom: 0,
           marginBottom: 0,
           justifyContent: "center",
-          flexGrow: 1,
         }}
       >
         {emails.map((item, index) => (
@@ -149,7 +147,7 @@ export default function Footer() {
         sx={{
           color: textColor,
           textAlign: "center",
-          fontSize: { xs: "8px", md: "12px" },
+          fontSize: { xs: "12px", md: "16px" },
           marginBottom: 2
         }}
       >

@@ -16,10 +16,9 @@ export const HoverText = ({ text }: { text: string }) => {
       className="flex justify-center items-center"
     >
       <motion.h1
-        className="font-bold text-[80px] sm:text-[120px] lg:text-[240px]" // Removed the lg class for testing
+        className="font-bold text-[45px] lg:text-[240px] md:!text-[190px]" // Removed the lg class for testing
         style={{
           color: "transparent",
-          fontSize: "200px", // Explicitly set for troubleshooting
           WebkitTextStroke: `2px ${strokeColor}`, // Dynamic stroke color
         }}
         variants={{
